@@ -1,0 +1,5 @@
+arxiv
+pdfplumber
+requests
+python-dotenv
+qdrant-client
