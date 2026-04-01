@@ -1,10 +1,21 @@
 import os
 import json
+from pathlib import Path
 from typing import List, Dict, Any, Optional
 
 import requests
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
+from langchain_core.messages import HumanMessage, AIMessage
+
+# Walk up from this file to find the nearest .env (same pattern as pipeline agents)
+for _p in Path(__file__).resolve().parents:
+    if (_p / ".env").exists():
+        load_dotenv(_p / ".env")
+        break
+
+from src.pipeline import run_query
 
 try:
     from qdrant_client import QdrantClient
@@ -13,7 +24,7 @@ except Exception:
 
 st.set_page_config(page_title="CAIS Demo Prototype", page_icon="🔬", layout="wide")
 
-QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+QDRANT_URL = os.getenv("QDRANT_URL", "")
 OPENALEX_URL = "https://api.openalex.org/works"
 
 
@@ -27,7 +38,7 @@ def check_qdrant(url: str) -> Dict[str, Any]:
         return {"ok": False, "error": str(e)}
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=True)
 def search_openalex(topic: str, per_page: int = 10) -> List[Dict[str, Any]]:
     params = {
         "search": topic,
@@ -129,11 +140,12 @@ with col3:
     st.metric("Current Topic", topic)
 
 
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Overview",
     "Paper Search",
     "Research Framework",
     "Qdrant",
+    "Chat",
 ])
 
 with tab1:
@@ -212,7 +224,7 @@ with tab3:
             mime="text/csv",
         )
 
-        st.caption("This tab currently uses a simple placeholder extractor. Swap in your real LLM prompt pipeline here.")
+        st.caption("This tab uses a rule-based placeholder. For LLM-powered extraction via the full pipeline, use the Chat tab.")
 
 with tab4:
     st.subheader("Qdrant Status")
@@ -228,3 +240,54 @@ with tab4:
         f'''from qdrant_client import QdrantClient\n\nclient = QdrantClient(url="{qdrant_url}")\n# create collection and upsert vectors here''',
         language="python",
     )
+
+with tab5:
+    st.subheader("Research Chat")
+    st.caption(
+        "Ask a research question — the full LangGraph pipeline runs: "
+        "Rephraser → Retriever → Extractor → Synthesizer."
+    )
+
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    for message in st.session_state.messages:
+        if isinstance(message, HumanMessage):
+            with st.chat_message("user"):
+                st.markdown(message.content)
+        elif isinstance(message, AIMessage):
+            with st.chat_message("assistant"):
+                st.markdown(message.content)
+
+    user_question = st.chat_input("Ask a research question...")
+
+    if user_question:
+        with st.chat_message("user"):
+            st.markdown(user_question)
+        st.session_state.messages.append(HumanMessage(user_question))
+
+        with st.spinner("Running pipeline: Rephraser → Retriever → Extractor → Synthesizer..."):
+            try:
+                result = run_query(user_question)
+                answer    = result["answer"]
+                citations = result["citations"]
+                error     = None
+            except Exception as exc:
+                answer    = None
+                citations = []
+                error     = str(exc)
+
+        if error:
+            st.error(f"Pipeline error: {error}")
+            st.session_state.messages.append(AIMessage(f"Error: {error}"))
+        else:
+            with st.chat_message("assistant"):
+                st.markdown(answer)
+                if citations:
+                    st.markdown("**Citations:**")
+                    for c in citations:
+                        authors = c.get("authors", "Unknown")
+                        year    = c.get("year", "n.d.")
+                        title   = c.get("title", "")
+                        st.markdown(f"- {authors} ({year}). *{title}*")
+            st.session_state.messages.append(AIMessage(answer))
