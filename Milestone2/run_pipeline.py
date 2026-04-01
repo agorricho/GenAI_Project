@@ -15,7 +15,7 @@ if __name__ == "__main__":
     subprocess.run([sys.executable, str(HERE / "download_papers.py")], check=True)
 
     print("\n=== Waiting 120 seconds before embedding... ===")
-    time.sleep(5)
+    time.sleep(120)
 
     print("\n=== Step 2: Embedding and upserting to Qdrant ===")
     subprocess.run([sys.executable, str(HERE / "embed_upsert.py")], check=True)

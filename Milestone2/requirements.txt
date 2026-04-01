@@ -1,0 +1,15 @@
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-ollama>=0.2.0
+qdrant-client>=1.9.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+streamlit>=1.35.0
+tabulate>=0.9.0
+arxiv
+pdfplumber
+requests
+python-dotenv
+qdrant-client
+langchain-text-splitters>=0.3.0
