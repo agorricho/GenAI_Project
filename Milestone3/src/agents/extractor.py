@@ -39,11 +39,11 @@ _llm = ChatOllama(
 
 # ── Prompt ────────────────────────────────────────────────────────────────────
 _PROMPT = (
-    "You are a research analyst extracting key findings from academic text.\n\n"
+    "You are a research analyst extracting key findings from academic abstracts.\n\n"
     "Research question: {query}\n\n"
-    "Paper excerpt:\n{text}\n\n"
+    "Paper abstract:\n{text}\n\n"
     "Instructions:\n"
-    "- If the excerpt contains findings relevant to the research question, "
+    "- If the abstract contains findings relevant to the research question, "
     "summarise the key finding in 1-3 sentences. Be specific: include "
     "direction of effect, statistical significance, and study context if stated.\n"
     "- If the excerpt is NOT relevant to the research question, respond with "

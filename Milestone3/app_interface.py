@@ -12,7 +12,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 # Walk up from this file to find the nearest .env (same pattern as pipeline agents)
 for _p in Path(__file__).resolve().parents:
     if (_p / ".env").exists():
-        load_dotenv(_p / ".env")
+        load_dotenv(_p / ".env", override=True)
         break
 
 from src.pipeline import run_query
@@ -24,13 +24,15 @@ except Exception:
 
 st.set_page_config(page_title="CAIS Demo Prototype", page_icon="🔬", layout="wide")
 
-QDRANT_URL = os.getenv("QDRANT_URL", "")
-OPENALEX_URL = "https://api.openalex.org/works"
+QDRANT_URL     = os.getenv("QDRANT_URL", "")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "")
+OPENALEX_URL   = "https://api.openalex.org/works"
 
 
-def check_qdrant(url: str) -> Dict[str, Any]:
+def check_qdrant(url: str, api_key: str = "") -> Dict[str, Any]:
     try:
-        response = requests.get(f"{url}/collections", timeout=5)
+        headers = {"api-key": api_key} if api_key else {}
+        response = requests.get(f"{url}/collections", headers=headers, timeout=5)
         response.raise_for_status()
         data = response.json()
         return {"ok": True, "collections": data.get("result", {}).get("collections", [])}
@@ -121,11 +123,11 @@ with st.sidebar:
     st.header("Project Controls")
     qdrant_url = st.text_input("Qdrant URL", value=QDRANT_URL)
     topic = st.text_input("Research topic", value="stroke rehabilitation")
-    per_page = st.slider("OpenAlex results", 5, 25, 10)
-    collection_name = st.text_input("Qdrant collection", value="papers")
-    run_search = st.button("Search OpenAlex", type="primary")
+    per_page = st.slider("Arxiv results", 5, 25, 10)
+    collection_name = st.text_input("Qdrant collection", value="msa8700_m3")
+    run_search = st.button("Search Arxiv", type="primary")
 
-status = check_qdrant(qdrant_url)
+status = check_qdrant(qdrant_url, QDRANT_API_KEY)
 if status["ok"]:
     st.success(f"Qdrant connected at {qdrant_url}")
 else:
@@ -186,7 +188,7 @@ if run_search:
 papers_df = st.session_state.get("papers_df")
 
 with tab2:
-    st.subheader("OpenAlex Paper Search")
+    st.subheader("Arxiv Paper Search")
     if papers_df is None or papers_df.empty:
         st.info("Use the sidebar to search for a topic.")
     else:

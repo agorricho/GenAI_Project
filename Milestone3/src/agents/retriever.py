@@ -4,16 +4,16 @@ Node 2 — Retriever
 Input:  state["rephrased_query"]
 Output: state["retrieved_chunks"]  (top-5 Qdrant hits)
 
-Embeds the rephrased query via the same Ollama/nomic-embed-text call used in
-Milestone 2, then vector-searches the msa8700_m2 Qdrant collection.
+Embeds the rephrased query via fastembed (nomic-embed-text ONNX, same vectors
+as Milestone 2), then vector-searches the msa8700_m3 Qdrant collection.
 
 Each chunk dict: {text, title, authors, year, score}
 """
 
 import os
-import requests
 from pathlib import Path
 from dotenv import load_dotenv
+from fastembed import TextEmbedding
 from qdrant_client import QdrantClient
 
 # ── Load credentials ──────────────────────────────────────────────────────────
@@ -22,32 +22,21 @@ for _p in Path(__file__).resolve().parents:
         load_dotenv(_p / ".env")
         break
 
-QDRANT_URL      = os.getenv("QDRANT_URL")
-QDRANT_API_KEY  = os.getenv("QDRANT_API_KEY")
-OLLAMA_API_KEY  = os.getenv("0LLAMA", "")
-OLLAMA_EMBED_URL = os.getenv("OLLAMA_EMBED_BASE_URL", "http://localhost:11434") + "/api/embeddings"
-EMBED_MODEL     = "nomic-embed-text"
-COLLECTION      = "msa8700_m2"
-TOP_K           = 5
-TEXT_LIMIT      = 1500
+QDRANT_URL     = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+COLLECTION     = "msa8700_m3"
+TOP_K          = 5
 
 # ── Qdrant client ─────────────────────────────────────────────────────────────
 _qdrant = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 
+# ── Embedding model (ONNX, compatible with nomic-embed-text vectors in Qdrant) ─
+_embedder = TextEmbedding("nomic-ai/nomic-embed-text-v1.5")
+
 
 def _embed(text: str) -> list[float]:
-    """Embed text via Ollama (mirrors M2 embed_with_retry logic)."""
-    headers = {}
-    if OLLAMA_API_KEY:
-        headers["Authorization"] = f"Bearer {OLLAMA_API_KEY}"
-    resp = requests.post(
-        OLLAMA_EMBED_URL,
-        headers=headers,
-        json={"model": EMBED_MODEL, "prompt": text[:TEXT_LIMIT], "keep_alive": "5m"},
-        timeout=60,
-    )
-    resp.raise_for_status()
-    return resp.json()["embedding"]
+    """Embed text via fastembed (nomic-embed-text, ONNX — same vectors as Ollama)."""
+    return list(next(iter(_embedder.embed([text]))))
 
 
 # ── Node function ─────────────────────────────────────────────────────────────
@@ -67,7 +56,7 @@ def retriever_node(state: dict) -> dict:
     for hit in hits:
         payload = hit.payload or {}
         chunks.append({
-            "text":    payload.get("text", ""),
+            "text":    payload.get("abstract", ""),
             "title":   payload.get("title", "Unknown"),
             "authors": payload.get("authors", ""),
             "year":    payload.get("year", ""),
