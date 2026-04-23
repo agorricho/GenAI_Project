@@ -1,0 +1,35 @@
+[
+  {
+    "question": "How does ESG disclosure quality affect a firm's cost of equity capital?",
+    "reference_answer": "Higher ESG disclosure quality is associated with a lower cost of equity capital. The study finds a statistically significant negative coefficient indicating that firms with more transparent ESG reporting face reduced financing costs.",
+    "expected_source_title": "ESG Disclosure and Cost of Capital: Evidence from Panel Data",
+    "generation_mode": "abstract",
+    "difficulty": "broad",
+    "esg_category": "governance",
+    "is_in_corpus": true,
+    "item_id": "item_001",
+    "source_chunk_index": 0
+  },
+  {
+    "question": "What specific F-statistic threshold does the paper use to validate instrument strength in its IV estimation?",
+    "reference_answer": "The paper applies the Stock and Yogo (2005) rule of thumb requiring a first-stage F-statistic greater than 10 to confirm that the instrumental variable is not weak.",
+    "expected_source_title": "Instrumental Variables and ESG Endogeneity in Firm Performance Research",
+    "generation_mode": "chunk",
+    "difficulty": "specific",
+    "esg_category": "governance",
+    "is_in_corpus": true,
+    "item_id": "item_002",
+    "source_chunk_index": 0
+  },
+  {
+    "question": "What is the optimal strategy for minimising carbon emissions in protein synthesis?",
+    "reference_answer": "This question is not related to ESG or firm performance research and is not covered by the corpus.",
+    "expected_source_title": "N/A",
+    "generation_mode": "negative",
+    "difficulty": "out-of-scope",
+    "esg_category": "off_topic",
+    "is_in_corpus": false,
+    "item_id": "item_003",
+    "source_chunk_index": 0
+  }
+]
