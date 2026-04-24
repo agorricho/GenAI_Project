@@ -4,6 +4,53 @@ Final Project — MSA 8700: Building Generative AI Business Solutions
 **DAIS: Document-Driven Agentic Intelligence System** — a Research Advisor RAG agent that ingests academic papers and answers queries using retrieved context.
 
 ---
+## Prerequisites
+
+- Python 3.12 via conda environment `gra-venv`
+- Ollama installed locally with `nomic-embed-text` pulled
+- `.env` file in `/home/agorricho/MSA8700/` (see Section 2)
+
+---
+
+## Section 1 — Configure Ollama
+
+```bash
+# Start the local Ollama server (runs on localhost:11434 by default)
+ollama serve
+
+# In a new terminal — pull the embedding model
+ollama pull nomic-embed-text
+
+# Verify the model is available
+ollama list
+```
+
+---
+
+## Section 2 — `.env` File Format
+
+Create a `.env` file in `/home/agorricho/MSA8700/` with the following contents:
+
+```
+QDRANT_URL = https://fc2a9938-...qdrant.io
+QDRANT_API_KEY = <your-qdrant-jwt>
+0LLAMA = <your-ollama-api-key>
+```
+
+> **Note:** The `0LLAMA` key name starts with a zero (`0`), not a capital letter O. The Ollama API key is loaded but not used for local connections — it is retained for future cloud migration.
+
+---
+
+## Section 3 — Install Dependencies
+
+```bash
+conda activate gra-venv
+pip install -r requirementsM2.txt
+```
+
+---
+
+## Section 4 — Run the Pipeline
 
 ## Milestone Overview
 
