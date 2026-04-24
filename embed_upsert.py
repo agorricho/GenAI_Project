@@ -4,11 +4,12 @@ MSA 8700 Final Project (DAIS, Variation B — Research Advisor)
 
 What this script does:
   1. Load chunks.json produced by download_papers.py
-  2. Embed each chunk via Ollama Cloud API (nomic-embed-text, 768-dim)
+  2. Embed each chunk via Ollama (mxbai-embed-large, 1024-dim)
   3. Upsert vectors + metadata to Qdrant Cloud, one paper at a time
   4. Checkpoint progress to progress.json after each paper
 
 Re-run safely after a crash — resumes from last completed paper.
+Delete progress.json to force a full fresh run.
 """
 
 import os
@@ -56,11 +57,10 @@ if not QDRANT_URL or not QDRANT_API_KEY or not OLLAMA_API_KEY:
     )
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-COLLECTION      = "msa8700_m2"
+COLLECTION      = "msa8700_m3"
 OLLAMA_BASE_URL = "http://localhost:11434/api/embeddings"
-EMBED_MODEL     = "nomic-embed-text"
-VECTOR_DIM      = 768
-TEXT_LIMIT      = 1500   # chars per embed call (reduced further for low-RAM WSL2)
+EMBED_MODEL     = "mxbai-embed-large"   # 1024-dim, MTEB retrieval leader
+VECTOR_DIM      = 1024
 CHUNKS_FILE     = "./chunks.json"
 PROGRESS_FILE   = "./progress.json"
 
@@ -100,7 +100,7 @@ else:
 client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 
 if resume_index == -1:
-    # Fresh run: recreate collection
+    # Fresh run: recreate collection with new 1024-dim schema
     if client.collection_exists(COLLECTION):
         print(f"Collection '{COLLECTION}' already exists — recreating...")
         client.delete_collection(COLLECTION)
@@ -111,12 +111,12 @@ if resume_index == -1:
             distance=models.Distance.COSINE
         )
     )
-    print(f"Collection '{COLLECTION}' created.\n")
+    print(f"Collection '{COLLECTION}' created (dim={VECTOR_DIM}).\n")
 else:
     print(f"Resuming — keeping existing collection '{COLLECTION}'.\n")
 
 
-# ── Embed with retry + sleep ──────────────────────────────────────────────────
+# ── Embed with retry ──────────────────────────────────────────────────────────
 def embed_with_retry(text: str, max_retries: int = 3) -> list[float]:
     """Embed text via Ollama with exponential backoff on HTTP 500."""
     for attempt in range(max_retries):
@@ -124,7 +124,7 @@ def embed_with_retry(text: str, max_retries: int = 3) -> list[float]:
             response = requests.post(
                 OLLAMA_BASE_URL,
                 headers={"Authorization": f"Bearer {OLLAMA_API_KEY}"},
-                json={"model": EMBED_MODEL, "prompt": text[:TEXT_LIMIT], "keep_alive": "5m"}
+                json={"model": EMBED_MODEL, "prompt": text, "keep_alive": "1h"}
             )
             response.raise_for_status()
             return response.json()["embedding"]
@@ -138,20 +138,6 @@ def embed_with_retry(text: str, max_retries: int = 3) -> list[float]:
                 raise
 
 
-def unload_model() -> None:
-    """Force Ollama to evict the embedding model from RAM immediately."""
-    try:
-        requests.post(
-            OLLAMA_BASE_URL,
-            headers={"Authorization": f"Bearer {OLLAMA_API_KEY}"},
-            json={"model": EMBED_MODEL, "prompt": "", "keep_alive": 0},
-            timeout=10,
-        )
-        time.sleep(3)   # give OS time to reclaim RAM before next paper loads model
-    except Exception:
-        pass  # Non-fatal: next paper's embed_with_retry will reload the model
-
-
 # ── Main loop: embed per paper, upsert, checkpoint ───────────────────────────
 total_upserted = 0
 
@@ -163,7 +149,7 @@ for paper_index in paper_indices:
 
     chunks = papers_map[paper_index]
     title  = chunks[0]["title"]
-    print(f"[{paper_index + 1}/{len(paper_indices)}] Embedding: {title[:60]}")
+    print(f"[{paper_index + 1}/{len(paper_indices)}] Embedding: {title[:60]} ({len(chunks)} chunks)")
 
     points = []
     for chunk in chunks:
@@ -175,12 +161,14 @@ for paper_index in paper_indices:
                 "title":       chunk["title"],
                 "authors":     chunk["authors"],
                 "year":        chunk["year"],
+                "arxiv_id":    chunk["arxiv_id"],
+                "abstract":    chunk["abstract"],
                 "pdf_path":    chunk["pdf_path"],
                 "chunk_index": chunk["chunk_index"],
+                "chunk_total": chunk["chunk_total"],
+                "text":        chunk["text"],
             }
         ))
-
-    unload_model()   # free RAM before moving to next paper
 
     client.upsert(collection_name=COLLECTION, points=points)
     total_upserted += len(points)
@@ -190,11 +178,13 @@ for paper_index in paper_indices:
     with open(PROGRESS_FILE, "w") as f:
         json.dump({"last_completed_paper_index": paper_index}, f)
 
-print(f"\nDone. {total_upserted} vectors stored in Qdrant collection '{COLLECTION}'.")
+print(f"\nDone. {total_upserted} vectors stored in Qdrant collection '{COLLECTION}' (dim={VECTOR_DIM}).")
 print(f"\nVerify:")
 print(f'  python -c "')
 print(f"  import os; from dotenv import load_dotenv; load_dotenv('.env')")
 print(f"  from qdrant_client import QdrantClient")
 print(f"  c = QdrantClient(url=os.getenv('QDRANT_URL'), api_key=os.getenv('QDRANT_API_KEY'))")
-print(f"  print('Vectors stored:', c.get_collection('{COLLECTION}').vectors_count)")
+print(f"  info = c.get_collection('{COLLECTION}')")
+print(f"  print('Vectors stored:', info.vectors_count)")
+print(f"  print('Vector dim:', info.config.params.vectors.size)")
 print(f'  "')
