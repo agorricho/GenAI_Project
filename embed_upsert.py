@@ -41,23 +41,27 @@ print(f"Loaded .env from: {ENV_PATH}")
 
 QDRANT_URL     = os.getenv("QDRANT_URL")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-OLLAMA_API_KEY = os.getenv("0LLAMA")   # NOTE: key name starts with zero in .env
+# Auth: ARC GPU bearer token takes priority; fall back to Ollama cloud key
+OLLAMA_API_KEY = os.environ.get("ARC_OLLAMA_API") or os.getenv("0LLAMA")
 
 if not QDRANT_URL or not QDRANT_API_KEY or not OLLAMA_API_KEY:
     raise ValueError(
         f"Missing credentials. Loaded .env from {ENV_PATH}\n"
         f"  QDRANT_URL     = {'set' if QDRANT_URL else 'MISSING'}\n"
         f"  QDRANT_API_KEY = {'set' if QDRANT_API_KEY else 'MISSING'}\n"
-        f"  0LLAMA         = {'set' if OLLAMA_API_KEY else 'MISSING'}"
+        f"  ARC_OLLAMA_API / 0LLAMA = {'set' if OLLAMA_API_KEY else 'MISSING'}"
     )
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 COLLECTION      = "msa8700_m3"
-OLLAMA_BASE_URL = "http://localhost:11434/api/embeddings"
-EMBED_MODEL     = "mxbai-embed-large"   # 1024-dim, MTEB retrieval leader
-VECTOR_DIM      = 1024
+EMBED_MODEL     = os.getenv("EMBED_MODEL", "mxbai-embed-large")
+VECTOR_DIM      = int(os.getenv("VECTOR_DIM", "1024"))
+_ollama_base    = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+OLLAMA_BASE_URL = f"{_ollama_base}/api/embeddings"
 CHUNKS_FILE     = "./chunks.json"
 PROGRESS_FILE   = "./progress.json"
+CHUNK_DELAY     = float(os.getenv("EMBED_CHUNK_DELAY", "0.5"))   # seconds between chunk embeds
+MAX_CHUNK_CHARS = max(1, int(os.getenv("MAX_CHUNK_CHARS", "6000")))  # truncate before embedding
 
 
 # ── Load chunks ───────────────────────────────────────────────────────────────
@@ -112,7 +116,7 @@ else:
 
 
 # ── Embed with retry ──────────────────────────────────────────────────────────
-def embed_with_retry(text: str, max_retries: int = 3) -> list[float]:
+def embed_with_retry(text: str, max_retries: int = 5) -> list[float]:
     """Embed text via Ollama with exponential backoff on HTTP 500."""
     for attempt in range(max_retries):
         try:
@@ -124,8 +128,11 @@ def embed_with_retry(text: str, max_retries: int = 3) -> list[float]:
             response.raise_for_status()
             return response.json()["embedding"]
         except requests.exceptions.HTTPError as e:
+            status = e.response.status_code if e.response is not None else 0
+            if 0 < status < 500:      # 4xx — auth/not-found, do not retry (status==0 → retry)
+                raise
             if attempt < max_retries - 1:
-                wait = 10 * (2 ** attempt)   # 10s, 20s, 40s
+                wait = 10 * (2 ** attempt)   # 10s, 20s, 40s, 80s, 160s
                 print(f"    Embed failed (attempt {attempt + 1}), "
                       f"retrying in {wait}s: {e}")
                 time.sleep(wait)
@@ -148,7 +155,10 @@ for paper_index in paper_indices:
 
     points = []
     for chunk in chunks:
-        vector = embed_with_retry(chunk["text"])
+        text_to_embed = chunk["text"][:MAX_CHUNK_CHARS]   # embed-only; full text still stored in payload
+        vector = embed_with_retry(text_to_embed)
+        if CHUNK_DELAY > 0:
+            time.sleep(CHUNK_DELAY)
         points.append(PointStruct(
             id=str(uuid.uuid4()),
             vector=vector,
