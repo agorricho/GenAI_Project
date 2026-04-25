@@ -22,27 +22,22 @@ from qdrant_client import QdrantClient, models
 from qdrant_client.http.models import PointStruct
 
 # ── Load credentials from .env ────────────────────────────────────────────────
-ENV_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+from pathlib import Path
+
+def _find_env() -> Path:
+    """Walk up from this file's directory until a .env is found."""
+    for parent in [Path(__file__).resolve(), *Path(__file__).resolve().parents]:
+        candidate = parent if parent.is_file() else parent / ".env"
+        if candidate.name == ".env" and candidate.exists():
+            return candidate
+    raise FileNotFoundError(
+        ".env not found in any ancestor directory of "
+        + str(Path(__file__).resolve())
+    )
+
+ENV_PATH = _find_env()
 load_dotenv(dotenv_path=ENV_PATH)
-
-def _load_env_fallback(env_path):
-    try:
-        with open(env_path) as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-                if "=" not in line:
-                    parts = line.split(None, 1)
-                    if len(parts) == 2:
-                        key, val = parts
-                        val = val.strip('"').strip("'")
-                        if not os.environ.get(key):
-                            os.environ[key] = val
-    except FileNotFoundError:
-        raise FileNotFoundError(f".env file not found at: {env_path}")
-
-_load_env_fallback(ENV_PATH)
+print(f"Loaded .env from: {ENV_PATH}")
 
 QDRANT_URL     = os.getenv("QDRANT_URL")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
@@ -50,7 +45,7 @@ OLLAMA_API_KEY = os.getenv("0LLAMA")   # NOTE: key name starts with zero in .env
 
 if not QDRANT_URL or not QDRANT_API_KEY or not OLLAMA_API_KEY:
     raise ValueError(
-        f"Missing credentials. Check .env at {ENV_PATH}\n"
+        f"Missing credentials. Loaded .env from {ENV_PATH}\n"
         f"  QDRANT_URL     = {'set' if QDRANT_URL else 'MISSING'}\n"
         f"  QDRANT_API_KEY = {'set' if QDRANT_API_KEY else 'MISSING'}\n"
         f"  0LLAMA         = {'set' if OLLAMA_API_KEY else 'MISSING'}"
