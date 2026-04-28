@@ -1,0 +1,274 @@
+nohup: ignoring input
+/home/agorricho1/AI_Scientist2/GenAI_Project/download_papers.py:53: DeprecationWarning: The 'Search.results' method is deprecated, use 'Client.results' instead
+  for result in search.results():
+Searching arXiv for: 'ESG Performance impact on Firm Value' (max 50 papers)...
+  [skip] Already downloaded: ESG-FTSE: A corpus of news articles with ESG relevance labels and use 
+  [skip] Already downloaded: Measuring Sustainability Intention of ESG Fund Disclosure using Few-Sh
+  [skip] Already downloaded: The China Trade Shock and the ESG Performances of US firms
+  [skip] Already downloaded: Study on the impact of trade policy uncertainty on the performance of 
+  [skip] Already downloaded: Evolution of ESG-focused DLT Research: An NLP Analysis of the Literatu
+  [skip] Already downloaded: Performance of Genetic Algorithms in the Context of Software Model Ref
+  [skip] Already downloaded: Firm Projects, NPV and Risk
+  [skip] Already downloaded: An Instrumental Variables Approach to Testing Firm Conduct under a Ber
+  [skip] Already downloaded: Modeling Firm-Level ESG-Sentiment Interactions in Stock Returns: Evide
+  [skip] Already downloaded: Sustainable Investment: ESG Impacts on Large Portfolio
+  [skip] Already downloaded: SOE's ESG Performance on Financial Flexibility: The Evidence from the 
+  [skip] Already downloaded: Entrepreneurial Motivations and ESG Performance Evidence from Automobi
+  [skip] Already downloaded: Enhancing ESG Impact Type Identification through Early Fusion and Mult
+  [skip] Already downloaded: Empirical Analysis of Digital Innovations Impact on Corporate ESG Perf
+  [skip] Already downloaded: Performance Analysis of Software to Hardware Task Migration in Codesig
+  [skip] Already downloaded: ESG-Valued Portfolio Optimization and Dynamic Asset Pricing
+  [skip] Already downloaded: A Performance Study of GA and LSH in Multiprocessor Job Scheduling
+  [skip] Already downloaded: Bayesian Optimization of ESG Financial Investments
+  [skip] Already downloaded: ESG Beliefs of Large Language Models: Evidence and Impact
+  [skip] Already downloaded: Does ESG Consistently Promote the Corporate Financial Performance? A S
+  [download] Value-chain oriented identification of indicators to establish a compr
+    Download failed (attempt 1), retrying in 30s: HTTP Error 429: Unknown Error
+    Download failed (attempt 2), retrying in 60s: HTTP Error 429: Unknown Error
+    Download failed (attempt 3), retrying in 120s: HTTP Error 429: Unknown Error
+  [download] Firm non-expansive mappings in weak metric spaces
+  [download] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mit
+    Download failed (attempt 1), retrying in 30s: HTTP Error 429: Unknown Error
+  [download] Jetsons at FinNLP 2024: Towards Understanding the ESG Impact of a News
+  [download] Crosswashing in Sustainable Investing: Unveiling Strategic Practices I
+  [download] Causal Impact Of European Union Emission Trading Scheme On Firm Behavi
+  [download] The Effect of Marketing Investment on Firm Value and Systematic Risk
+  [download] The Impact of Digital Financial Services on Firm's Performance: a Lite
+  [download] Fund Characteristics and Performances of Socially Responsible Mutual F
+  [download] Study Of German Manufacturing Firms: Causal Impact Of European Union E
+  [download] A Metric for Performance Portability
+  [download] ESG In Corporate Filings: An AI Perspective
+  [download] ESG Signaling on Wall Street in the AI Era
+  [download] Enhanced Cluster Computing Performance Through Proportional Fairness
+  [download] ESG Sentiment Analysis: comparing human and language model performance
+  [download] Human-AI Technology Integration and Green ESG Performance: Evidence fr
+  [download] ESG Integration into Corporate Strategy Value Realization
+    Download failed (attempt 1), retrying in 30s: HTTP Error 404: Not Found
+    Download failed (attempt 2), retrying in 60s: HTTP Error 404: Not Found
+    Download failed (attempt 3), retrying in 120s: HTTP Error 404: Not Found
+    Download failed (attempt 4), retrying in 240s: HTTP Error 404: Not Found
+  [SKIP] All retries failed — skipping paper: ESG Integration into Corporate Strategy Value Realization
+  [download] ESG, Risk, and (Tail) Dependence
+  [download] Developing an ESG-Oriented Large Language Model through ESG Practices
+  [download] ESG Reputation Risk Matters: An Event Study Based on Social Media Data
+  [download] Modeling the Evolutionary Trends in Corporate ESG Reporting: A Study b
+  [download] Path-dependent, ESG-valued, option pricing in the Bachelier-Black-Scho
+  [download] Asset management with an ESG mandate
+  [download] Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, 
+    Download failed (attempt 1), retrying in 30s: <urlopen error retrieval incomplete: got only 4194304 out of 4823802 bytes>
+  [download] Managing ESG Ratings Disagreement in Sustainable Portfolio Selection
+  [download] Mediating role of managing information technology and its impact on fi
+  [download] Evaluating the performance of state-of-the-art esg domain-specific pre
+  [download] ESG: Pipeline-Conscious Efficient Scheduling of DNN Workflows on Serve
+  [download] Towards an Objective Metric for the Performance of Exact Triangle Coun
+    Download failed (attempt 1), retrying in 30s: HTTP Error 429: Unknown Error
+  [download] Navigating Uncertainty in ESG Investing
+
+Ready: 49 papers in ./papers/
+Found 20 already-chunked papers in ./chunks.json — will reuse.
+[1/49] Reused:    ESG-FTSE: A corpus of news articles with ESG relevance label (38 chunks)
+[2/49] Reused:    Measuring Sustainability Intention of ESG Fund Disclosure us (34 chunks)
+[3/49] Reused:    The China Trade Shock and the ESG Performances of US firms (103 chunks)
+[4/49] Reused:    Study on the impact of trade policy uncertainty on the perfo (33 chunks)
+[5/49] Reused:    Evolution of ESG-focused DLT Research: An NLP Analysis of th (89 chunks)
+[6/49] Reused:    Performance of Genetic Algorithms in the Context of Software (40 chunks)
+[7/49] Reused:    Firm Projects, NPV and Risk (36 chunks)
+[8/49] Reused:    An Instrumental Variables Approach to Testing Firm Conduct u (150 chunks)
+[9/49] Reused:    Modeling Firm-Level ESG-Sentiment Interactions in Stock Retu (108 chunks)
+[10/49] Reused:    Sustainable Investment: ESG Impacts on Large Portfolio (80 chunks)
+[11/49] Reused:    SOE's ESG Performance on Financial Flexibility: The Evidence (43 chunks)
+[12/49] Reused:    Entrepreneurial Motivations and ESG Performance Evidence fro (65 chunks)
+[13/49] Reused:    Enhancing ESG Impact Type Identification through Early Fusio (24 chunks)
+[14/49] Reused:    Empirical Analysis of Digital Innovations Impact on Corporat (62 chunks)
+[15/49] Reused:    Performance Analysis of Software to Hardware Task Migration  (39 chunks)
+[16/49] Reused:    ESG-Valued Portfolio Optimization and Dynamic Asset Pricing (117 chunks)
+[17/49] Reused:    A Performance Study of GA and LSH in Multiprocessor Job Sche (20 chunks)
+[18/49] Reused:    Bayesian Optimization of ESG Financial Investments (47 chunks)
+[19/49] Reused:    ESG Beliefs of Large Language Models: Evidence and Impact (118 chunks)
+[20/49] Reused:    Does ESG Consistently Promote the Corporate Financial Perfor (53 chunks)
+[21/49] Extracting: Value-chain oriented identification of indicators to establi
+  → 35 chunks
+[22/49] Extracting: Firm non-expansive mappings in weak metric spaces
+  → 24 chunks
+[23/49] Extracting: ESG-Bench: Benchmarking Long-Context ESG Reports for Halluci
+  → 44 chunks
+[24/49] Extracting: Jetsons at FinNLP 2024: Towards Understanding the ESG Impact
+  → 21 chunks
+[25/49] Extracting: Crosswashing in Sustainable Investing: Unveiling Strategic P
+  → 81 chunks
+[26/49] Extracting: Causal Impact Of European Union Emission Trading Scheme On F
+  → 37 chunks
+[27/49] Extracting: The Effect of Marketing Investment on Firm Value and Systema
+  → 65 chunks
+[28/49] Extracting: The Impact of Digital Financial Services on Firm's Performan
+  → 45 chunks
+[29/49] Extracting: Fund Characteristics and Performances of Socially Responsibl
+  → 40 chunks
+[30/49] Extracting: Study Of German Manufacturing Firms: Causal Impact Of Europe
+  → 37 chunks
+[31/49] Extracting: A Metric for Performance Portability
+  → 36 chunks
+[32/49] Extracting: ESG In Corporate Filings: An AI Perspective
+  → 118 chunks
+[33/49] Extracting: ESG Signaling on Wall Street in the AI Era
+  → 38 chunks
+[34/49] Extracting: Enhanced Cluster Computing Performance Through Proportional 
+  → 44 chunks
+[35/49] Extracting: ESG Sentiment Analysis: comparing human and language model p
+  → 36 chunks
+[36/49] Extracting: Human-AI Technology Integration and Green ESG Performance: E
+  → 37 chunks
+[37/49] Extracting: ESG, Risk, and (Tail) Dependence
+  → 69 chunks
+[38/49] Extracting: Developing an ESG-Oriented Large Language Model through ESG 
+  → 48 chunks
+[39/49] Extracting: ESG Reputation Risk Matters: An Event Study Based on Social 
+  → 43 chunks
+[40/49] Extracting: Modeling the Evolutionary Trends in Corporate ESG Reporting:
+  → 52 chunks
+[41/49] Extracting: Path-dependent, ESG-valued, option pricing in the Bachelier-
+  → 48 chunks
+[42/49] Extracting: Asset management with an ESG mandate
+  → 63 chunks
+[43/49] Extracting: Pharos-ESG: A Framework for Multimodal Parsing, Contextual N
+  → 43 chunks
+[44/49] Extracting: Managing ESG Ratings Disagreement in Sustainable Portfolio S
+  → 74 chunks
+[45/49] Extracting: Mediating role of managing information technology and its im
+  → 62 chunks
+[46/49] Extracting: Evaluating the performance of state-of-the-art esg domain-sp
+  → 116 chunks
+[47/49] Extracting: ESG: Pipeline-Conscious Efficient Scheduling of DNN Workflow
+  → 66 chunks
+[48/49] Extracting: Towards an Objective Metric for the Performance of Exact Tri
+  → 32 chunks
+[49/49] Extracting: Navigating Uncertainty in ESG Investing
+  → 105 chunks
+
+Done. 2858 chunks saved to ./chunks.json
+Papers processed: 49 | Avg chunks/paper: 58
+
+Next step: python embed_upsert.py
+Loaded .env from: /home/agorricho1/AI_Scientist2/GenAI_Project/.env
+Loaded 2858 chunks from ./chunks.json
+Papers to process: 49
+No checkpoint found — starting fresh run
+Collection 'msa8700_m4' created (dim=768).
+
+[1/49] Embedding: ESG-FTSE: A corpus of news articles with ESG relevance label (38 chunks)
+  → 38 vectors upserted  (total so far: 38)
+[2/49] Embedding: Measuring Sustainability Intention of ESG Fund Disclosure us (34 chunks)
+  → 34 vectors upserted  (total so far: 72)
+[3/49] Embedding: The China Trade Shock and the ESG Performances of US firms (103 chunks)
+  → 103 vectors upserted  (total so far: 175)
+[4/49] Embedding: Study on the impact of trade policy uncertainty on the perfo (33 chunks)
+  → 33 vectors upserted  (total so far: 208)
+[5/49] Embedding: Evolution of ESG-focused DLT Research: An NLP Analysis of th (89 chunks)
+  → 89 vectors upserted  (total so far: 297)
+[6/49] Embedding: Performance of Genetic Algorithms in the Context of Software (40 chunks)
+  → 40 vectors upserted  (total so far: 337)
+[7/49] Embedding: Firm Projects, NPV and Risk (36 chunks)
+  → 36 vectors upserted  (total so far: 373)
+[8/49] Embedding: An Instrumental Variables Approach to Testing Firm Conduct u (150 chunks)
+  → 150 vectors upserted  (total so far: 523)
+[9/49] Embedding: Modeling Firm-Level ESG-Sentiment Interactions in Stock Retu (108 chunks)
+  → 108 vectors upserted  (total so far: 631)
+[10/49] Embedding: Sustainable Investment: ESG Impacts on Large Portfolio (80 chunks)
+  → 80 vectors upserted  (total so far: 711)
+[11/49] Embedding: SOE's ESG Performance on Financial Flexibility: The Evidence (43 chunks)
+  → 43 vectors upserted  (total so far: 754)
+[12/49] Embedding: Entrepreneurial Motivations and ESG Performance Evidence fro (65 chunks)
+  → 65 vectors upserted  (total so far: 819)
+[13/49] Embedding: Enhancing ESG Impact Type Identification through Early Fusio (24 chunks)
+  → 24 vectors upserted  (total so far: 843)
+[14/49] Embedding: Empirical Analysis of Digital Innovations Impact on Corporat (62 chunks)
+  → 62 vectors upserted  (total so far: 905)
+[15/49] Embedding: Performance Analysis of Software to Hardware Task Migration  (39 chunks)
+  → 39 vectors upserted  (total so far: 944)
+[16/49] Embedding: ESG-Valued Portfolio Optimization and Dynamic Asset Pricing (117 chunks)
+  → 117 vectors upserted  (total so far: 1061)
+[17/49] Embedding: A Performance Study of GA and LSH in Multiprocessor Job Sche (20 chunks)
+  → 20 vectors upserted  (total so far: 1081)
+[18/49] Embedding: Bayesian Optimization of ESG Financial Investments (47 chunks)
+  → 47 vectors upserted  (total so far: 1128)
+[19/49] Embedding: ESG Beliefs of Large Language Models: Evidence and Impact (118 chunks)
+  → 118 vectors upserted  (total so far: 1246)
+[20/49] Embedding: Does ESG Consistently Promote the Corporate Financial Perfor (53 chunks)
+  → 53 vectors upserted  (total so far: 1299)
+[21/49] Embedding: Value-chain oriented identification of indicators to establi (35 chunks)
+  → 35 vectors upserted  (total so far: 1334)
+[22/49] Embedding: Firm non-expansive mappings in weak metric spaces (24 chunks)
+  → 24 vectors upserted  (total so far: 1358)
+[23/49] Embedding: ESG-Bench: Benchmarking Long-Context ESG Reports for Halluci (44 chunks)
+  → 44 vectors upserted  (total so far: 1402)
+[24/49] Embedding: Jetsons at FinNLP 2024: Towards Understanding the ESG Impact (21 chunks)
+  → 21 vectors upserted  (total so far: 1423)
+[25/49] Embedding: Crosswashing in Sustainable Investing: Unveiling Strategic P (81 chunks)
+  → 81 vectors upserted  (total so far: 1504)
+[26/49] Embedding: Causal Impact Of European Union Emission Trading Scheme On F (37 chunks)
+  → 37 vectors upserted  (total so far: 1541)
+[27/49] Embedding: The Effect of Marketing Investment on Firm Value and Systema (65 chunks)
+  → 65 vectors upserted  (total so far: 1606)
+[28/49] Embedding: The Impact of Digital Financial Services on Firm's Performan (45 chunks)
+  → 45 vectors upserted  (total so far: 1651)
+[29/49] Embedding: Fund Characteristics and Performances of Socially Responsibl (40 chunks)
+  → 40 vectors upserted  (total so far: 1691)
+[30/49] Embedding: Study Of German Manufacturing Firms: Causal Impact Of Europe (37 chunks)
+  → 37 vectors upserted  (total so far: 1728)
+[31/49] Embedding: A Metric for Performance Portability (36 chunks)
+  → 36 vectors upserted  (total so far: 1764)
+[32/49] Embedding: ESG In Corporate Filings: An AI Perspective (118 chunks)
+  → 118 vectors upserted  (total so far: 1882)
+[33/49] Embedding: ESG Signaling on Wall Street in the AI Era (38 chunks)
+  → 38 vectors upserted  (total so far: 1920)
+[34/49] Embedding: Enhanced Cluster Computing Performance Through Proportional  (44 chunks)
+  → 44 vectors upserted  (total so far: 1964)
+[35/49] Embedding: ESG Sentiment Analysis: comparing human and language model p (36 chunks)
+  → 36 vectors upserted  (total so far: 2000)
+[36/49] Embedding: Human-AI Technology Integration and Green ESG Performance: E (37 chunks)
+  → 37 vectors upserted  (total so far: 2037)
+[37/49] Embedding: ESG, Risk, and (Tail) Dependence (69 chunks)
+  → 69 vectors upserted  (total so far: 2106)
+[38/49] Embedding: Developing an ESG-Oriented Large Language Model through ESG  (48 chunks)
+  → 48 vectors upserted  (total so far: 2154)
+[39/49] Embedding: ESG Reputation Risk Matters: An Event Study Based on Social  (43 chunks)
+  → 43 vectors upserted  (total so far: 2197)
+[40/49] Embedding: Modeling the Evolutionary Trends in Corporate ESG Reporting: (52 chunks)
+  → 52 vectors upserted  (total so far: 2249)
+[41/49] Embedding: Path-dependent, ESG-valued, option pricing in the Bachelier- (48 chunks)
+  → 48 vectors upserted  (total so far: 2297)
+[42/49] Embedding: Asset management with an ESG mandate (63 chunks)
+  → 63 vectors upserted  (total so far: 2360)
+[43/49] Embedding: Pharos-ESG: A Framework for Multimodal Parsing, Contextual N (43 chunks)
+  → 43 vectors upserted  (total so far: 2403)
+[44/49] Embedding: Managing ESG Ratings Disagreement in Sustainable Portfolio S (74 chunks)
+  → 74 vectors upserted  (total so far: 2477)
+[45/49] Embedding: Mediating role of managing information technology and its im (62 chunks)
+  → 62 vectors upserted  (total so far: 2539)
+[46/49] Embedding: Evaluating the performance of state-of-the-art esg domain-sp (116 chunks)
+  → 116 vectors upserted  (total so far: 2655)
+[47/49] Embedding: ESG: Pipeline-Conscious Efficient Scheduling of DNN Workflow (66 chunks)
+  → 66 vectors upserted  (total so far: 2721)
+[48/49] Embedding: Towards an Objective Metric for the Performance of Exact Tri (32 chunks)
+  → 32 vectors upserted  (total so far: 2753)
+[49/49] Embedding: Navigating Uncertainty in ESG Investing (105 chunks)
+  → 105 vectors upserted  (total so far: 2858)
+
+Done. 2858 vectors stored in Qdrant collection 'msa8700_m4' (dim=768).
+
+Verify:
+  python -c "
+  import os; from dotenv import load_dotenv; load_dotenv('.env')
+  from qdrant_client import QdrantClient
+  c = QdrantClient(url=os.getenv('QDRANT_URL'), api_key=os.getenv('QDRANT_API_KEY'))
+  info = c.get_collection('msa8700_m4')
+  print('Vectors stored:', info.vectors_count)
+  print('Vector dim:', info.config.params.vectors.size)
+  "
+=== Step 1: Downloading and chunking papers ===
+
+=== Waiting 120 seconds before embedding... ===
+
+=== Step 2: Embedding and upserting to Qdrant ===
+
+=== Pipeline complete. ===

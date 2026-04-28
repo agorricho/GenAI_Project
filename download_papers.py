@@ -14,13 +14,14 @@ No Ollama or Qdrant calls — safe to re-run at any time.
 
 import os
 import json
+import time
 import arxiv
 import pdfplumber
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 TOPIC       = "ESG Performance impact on Firm Value"
-MAX_PAPERS  = 20
+MAX_PAPERS  = 50
 PAPERS_DIR  = "./papers"
 CHUNKS_FILE = "./chunks.json"
 
@@ -53,20 +54,33 @@ for result in search.results():
     safe_id  = result.get_short_id().replace("/", "_")
     pdf_path = os.path.join(PAPERS_DIR, f"{safe_id}.pdf")
 
+    downloaded = True
     if os.path.exists(pdf_path):
         print(f"  [skip] Already downloaded: {result.title[:70]}")
     else:
         print(f"  [download] {result.title[:70]}")
-        result.download_pdf(filename=pdf_path)
+        for attempt in range(5):
+            try:
+                result.download_pdf(filename=pdf_path)
+                break
+            except Exception as e:
+                if attempt < 4:
+                    wait = 30 * (2 ** attempt)   # 30s, 60s, 120s, 240s, 480s
+                    print(f"    Download failed (attempt {attempt + 1}), retrying in {wait}s: {e}")
+                    time.sleep(wait)
+                else:
+                    print(f"  [SKIP] All retries failed — skipping paper: {result.title[:70]}")
+                    downloaded = False
 
-    papers.append({
-        "title":    result.title,
-        "authors":  ", ".join(a.name for a in result.authors),
-        "year":     result.published.year,
-        "arxiv_id": result.get_short_id(),
-        "abstract": result.summary.replace("\n", " ").strip(),
-        "pdf_path": pdf_path,
-    })
+    if downloaded:
+        papers.append({
+            "title":    result.title,
+            "authors":  ", ".join(a.name for a in result.authors),
+            "year":     result.published.year,
+            "arxiv_id": result.get_short_id(),
+            "abstract": result.summary.replace("\n", " ").strip(),
+            "pdf_path": pdf_path,
+        })
 
 print(f"\nReady: {len(papers)} papers in {PAPERS_DIR}/")
 
@@ -93,8 +107,33 @@ def chunk_text(text):
 
 
 # ── Step 4: Build chunk list and save to chunks.json ─────────────────────────
+# Load any chunks already extracted in previous runs (skip re-chunking those papers).
+existing_by_arxiv: dict[str, list[dict]] = {}
+if os.path.exists(CHUNKS_FILE):
+    with open(CHUNKS_FILE, encoding="utf-8") as f:
+        _existing = json.load(f)
+    for c in _existing:
+        existing_by_arxiv.setdefault(c["arxiv_id"], []).append(c)
+    print(f"Found {len(existing_by_arxiv)} already-chunked papers in {CHUNKS_FILE} — will reuse.")
+
 all_chunks = []
 for paper_index, paper in enumerate(papers):
+    arxiv_id = paper["arxiv_id"]
+
+    if arxiv_id in existing_by_arxiv:
+        # Reuse existing chunks; update paper_index and metadata in case order changed.
+        reused = existing_by_arxiv[arxiv_id]
+        for c in reused:
+            c["paper_index"] = paper_index
+            c["title"]       = paper["title"]
+            c["authors"]     = paper["authors"]
+            c["year"]        = paper["year"]
+            c["abstract"]    = paper["abstract"]
+            c["pdf_path"]    = paper["pdf_path"]
+        all_chunks.extend(reused)
+        print(f"[{paper_index + 1}/{len(papers)}] Reused:    {paper['title'][:60]} ({len(reused)} chunks)")
+        continue
+
     print(f"[{paper_index + 1}/{len(papers)}] Extracting: {paper['title'][:60]}")
     text   = extract_text(paper["pdf_path"])
     chunks = chunk_text(text)

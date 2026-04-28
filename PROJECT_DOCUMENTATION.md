@@ -2,7 +2,7 @@
 ## MSA 8700: Building Generative AI Business Solutions
 **System:** Document-Driven Agentic Intelligence System (Variation B — Research Advisor)
 **Authors:** Alejandro Gorricho
-**Last Updated:** 2026-04-25
+**Last Updated:** 2026-04-25 (M2 re-run confirmed ✅ — nomic-embed-text 768-dim via ARC GPU; KI-001 resolved)
 
 ---
 
@@ -87,7 +87,7 @@ GenAI_Project/
 | Milestone | Description | Status | Points |
 |-----------|-------------|--------|--------|
 | M1 | Weekly assignments — Ollama, Pydantic, web scraping, Qdrant basics | ✅ Complete | — |
-| M2 | RAG ingestion pipeline — arXiv PDFs → chunks → Qdrant Cloud | ✅ Complete | — |
+| M2 | RAG ingestion pipeline — arXiv PDFs → chunks → Qdrant Cloud | ✅ Complete + re-run 2026-04-25 (nomic-embed-text 768-dim, ARC GPU) | — |
 | M3 | LangGraph RAG pipeline — Rephraser → Retriever → Extractor → Synthesizer + Streamlit UI | ✅ Complete | — |
 | M4 | Evaluation framework — 50-item Q&A dataset, 5 metrics, resumable eval runner | ✅ Complete | — |
 | **M5** | Iterative improvements + ablation study | Upcoming | 16 |
@@ -331,11 +331,15 @@ print('Vector dim:', info.config.params.vectors.size)
 QDRANT_URL="https://<cluster>.us-east4-0.gcp.cloud.qdrant.io"
 QDRANT_API_KEY="<qdrant-jwt>"
 OLLAMA_BASE_URL="https://gpu-01.insight.gsu.edu:11443"
-EMBED_MODEL="mxbai-embed-large"
-VECTOR_DIM="1024"
+EMBED_MODEL="nomic-embed-text"
+VECTOR_DIM="768"
+EMBED_CHUNK_DELAY="0.5"
+MAX_CHUNK_CHARS="6000"
 ```
 
 Auth for the ARC Ollama endpoint is sourced from the OS environment variable `ARC_OLLAMA_API` (already set on the cluster). It is **not** stored in the `.env` file.
+
+> **Note (2026-04-25):** Model switched from `mxbai-embed-large` (1024-dim) to `nomic-embed-text` (768-dim) to align with the M3 retriever — this resolves KI-001. Both `EMBED_CHUNK_DELAY` and `MAX_CHUNK_CHARS` are active to keep ARC requests stable.
 
 ### `Milestone3/.env` (M3/M4 pipeline — Ollama Cloud)
 
@@ -365,7 +369,7 @@ M3_MODEL=gpt-oss:120b
 
 ## 8. Debugging Log
 
-### Bug 1 — `embed_upsert.py` 500 Server Error (2026-04-25)
+### Bug 1 — `embed_upsert.py` 500 Server Error (2026-04-25) ✅ RESOLVED
 
 **Symptom:**
 ```
@@ -441,7 +445,7 @@ Status: 200
 Embedding dim: 1024  first 5: [-0.038, 0.029, -0.034, 0.031, -0.031]
 ```
 
-### Bug 1 — Follow-up Fix: ARC Endpoint Overload on Large Papers (2026-04-25)
+### Bug 1 — Follow-up Fix: ARC Endpoint Overload on Large Papers (2026-04-25) ✅ RESOLVED
 
 **Context:** After the URL/env fix above, 500 errors persisted on papers with 103+ chunks when running against the ARC GPU endpoint. Root cause: rapid back-to-back chunk embedding requests overwhelm the remote Ollama server under load, and the original 3-retry logic was insufficient to recover.
 
@@ -510,6 +514,32 @@ vector = embed_with_retry(text_to_embed)
 
 ---
 
+### M2 Pipeline — Successful Run (2026-04-25) ✅
+
+**Trigger:** Both Bug 1 fixes applied. Model switched to `nomic-embed-text` (768-dim) to align with M3 retriever and resolve KI-001.
+
+**Configuration used:**
+
+| Variable | Value |
+|----------|-------|
+| `OLLAMA_BASE_URL` | `https://gpu-01.insight.gsu.edu:11443` |
+| `EMBED_MODEL` | `nomic-embed-text` |
+| `VECTOR_DIM` | `768` |
+| `EMBED_CHUNK_DELAY` | `0.5` |
+| `MAX_CHUNK_CHARS` | `6000` |
+| Auth | `ARC_OLLAMA_API` (OS env — ARC GPU bearer token) |
+| Qdrant collection | `msa8700_m3` (recreated, 768-dim, cosine) |
+
+**What ran:**
+- `download_papers.py` → arXiv fetch + PDF chunking → `chunks.json`
+- `embed_upsert.py` → all 20 papers embedded via ARC GPU (nomic-embed-text) → upserted to Qdrant Cloud `msa8700_m3`
+
+**Result:** All 20 papers processed without 500 errors. Collection `msa8700_m3` rebuilt at 768-dim. Embedding dimension now matches M3 retriever — pipeline end-to-end compatible.
+
+**Side effect:** KI-001 (embedding dimension mismatch between M2 and M3) is resolved. The M5 fix item for KI-001 is no longer needed.
+
+---
+
 ### Bug 2 — `pip install` fails: "cannot execute: required file not found" (2026-04-25)
 
 **Symptom:**
@@ -549,16 +579,14 @@ pip3 install <package>
 
 ## 9. Known Issues & Workarounds
 
-### KI-001 — Embedding Dimension Mismatch (M2 vs M3)
+### KI-001 — Embedding Dimension Mismatch (M2 vs M3) ✅ RESOLVED (2026-04-25)
 
 | Layer | Model | Dimension | Collection |
 |-------|-------|-----------|------------|
-| M2 ingest (`embed_upsert.py`) | `mxbai-embed-large` | **1024** | `msa8700_m3` |
+| M2 ingest (`embed_upsert.py`) | `nomic-embed-text` (ARC GPU) | **768** | `msa8700_m3` |
 | M3 retriever (`retriever.py`) | `nomic-ai/nomic-embed-text-v1.5` (fastembed) | **768** | `msa8700_m3` |
 
-These are incompatible. The M3 retriever will return zero results or fail if the collection was built with 1024-dim vectors.
-
-**Workaround:** Rebuild `msa8700_m3` using nomic-embed-text at 768-dim, OR update the M3 retriever to use mxbai-embed-large at 1024-dim. Resolution deferred to M5.
+**Resolution:** `msa8700_m3` was rebuilt on 2026-04-25 using `nomic-embed-text` at 768-dim (ARC GPU endpoint). Both ingest and retrieval now use the same model family and dimension — Qdrant queries will succeed.
 
 ### KI-002 — Broken `~/.local/bin/pip`
 
@@ -585,7 +613,7 @@ Lines 181–187 print a verification snippet that calls `load_dotenv('.env')`. T
 ### M5 — Iterative Improvements + Ablation Study (16 pts)
 
 Candidate improvements:
-- **Fix KI-001** — align embedding model between M2 ingest and M3 retriever (either rebuild collection with nomic 768-dim, or swap M3 retriever to mxbai 1024-dim)
+- ~~**Fix KI-001** — align embedding model~~ ✅ Done (2026-04-25 — `msa8700_m3` rebuilt at 768-dim with nomic-embed-text)
 - Chunking strategy upgrade (current 1200-char fixed size → semantic/sliding window)
 - Retriever top-k tuning and score threshold filtering
 - Synthesizer prompt engineering improvements

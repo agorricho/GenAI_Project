@@ -1,0 +1,443 @@
+[
+  {
+    "paper_index": 0,
+    "title": "ESG-FTSE: A corpus of news articles with ESG relevance labels and use cases",
+    "authors": "Mariya Pavlova, Bernard Casey, Miaosen Wang",
+    "year": 2024,
+    "arxiv_id": "2405.20218v1",
+    "arxiv_url": "https://arxiv.org/abs/2405.20218v1",
+    "abstract": "We present ESG-FTSE, the first corpus comprised of news articles with Environmental, Social and Governance (ESG) relevance annotations. In recent years, investors and regulators have pushed ESG investing to the mainstream due to the urgency of climate change. This has led to the rise of ESG scores to evaluate an investment's credentials as socially responsible. While demand for ESG scores is high, their quality varies wildly. Quantitative techniques can be applied to improve ESG scores, thus, responsible investing. To contribute to resource building for ESG and financial text mining, we pioneer the ESG-FTSE corpus. We further present the first of its kind ESG annotation schema. It has three levels: a binary classification (relevant versus irrelevant news articles), ESG classification (ESG-related news articles), and target company. Both supervised and unsupervised learning experiments for ESG relevance detection were conducted to demonstrate that the corpus can be used in different settings to derive accurate ESG predictions. Keywords: corpus annotation, ESG labels, annotation schema, news article, natural language processing"
+  },
+  {
+    "paper_index": 1,
+    "title": "Measuring Sustainability Intention of ESG Fund Disclosure using Few-Shot Learning",
+    "authors": "Mayank Singh, Nazia Nafis, Abhijeet Kumar, Mridul Mishra",
+    "year": 2024,
+    "arxiv_id": "2407.06893v1",
+    "arxiv_url": "https://arxiv.org/abs/2407.06893v1",
+    "abstract": "Global sustainable fund universe encompasses open-end funds and exchange-traded funds (ETF) that, by prospectus or other regulatory filings, claim to focus on Environment, Social and Governance (ESG). Challengingly, the claims can only be confirmed by examining the textual disclosures to check if there is presence of intentionality and ESG focus on its investment strategy. Currently, there is no regulation to enforce sustainability in ESG products space. This paper proposes a unique method and system to classify and score the fund prospectuses in the sustainable universe regarding specificity and transparency of language. We aim to employ few-shot learners to identify specific, ambiguous, and generic sustainable investment-related language. Additionally, we construct a ratio metric to determine language score and rating to rank products and quantify sustainability claims for US sustainable universe. As a by-product, we publish manually annotated quality training dataset on Hugging Face (ESG-Prospectus-Clarity-Category under cc-by-nc-sa-4.0) of more than 1K ESG textual statements. The performance of the few-shot finetuning approach is compared with zero-shot models e.g., Llama-13B, GPT 3.5 Turbo etc. We found that prompting large language models are not accurate for domain specific tasks due to misalignment issues. The few-shot finetuning techniques outperform zero-shot models by large margins of more than absolute ~30% in precision, recall and F1 metrics on completely unseen ESG languages (test set). Overall, the paper attempts to establish a systematic and scalable approach to measure and rate sustainability intention quantitatively for sustainable funds using texts in prospectus. Regulatory bodies, investors, and advisors may utilize the findings of this research to reduce cognitive load in investigating or screening of ESG funds which accurately reflects the ESG intention."
+  },
+  {
+    "paper_index": 2,
+    "title": "The China Trade Shock and the ESG Performances of US firms",
+    "authors": "Hui Xu, Yue Wu",
+    "year": 2022,
+    "arxiv_id": "2201.12402v1",
+    "arxiv_url": "https://arxiv.org/abs/2201.12402v1",
+    "abstract": "How does import competition from China affect engagement on ESG initiatives by US corporates? On the one hand, reduced profitability due to import competition and lagging ESG performance of Chinese exporters can disincentivize US firms to put more resources to ESG initiatives. On the other hand, the shift from labor-intensive production to capital/technology-intensive production along with offshoring may improve the US company's ESG performance. Moreover, US companies have incentives to actively pursue more ESG engagement to differentiate from Chinese imports. Exploiting a trade policy in which US congress granted China the Permanent Normal Trade Relations and the resulting change in expected tariff rates on Chinese imports, we find that greater import competition from China leads to an increase in the US company's ESG performance. The improvement primarily stems from \"doing more positives\" and from more involvement on environmental initiatives. Indirect and direct evidence shows that the improvement is not driven by the change in production process or offshoring, but is consistent with product differentiation. Our results suggest that the trade shock from China has significant impact on the US company's ESG performance."
+  },
+  {
+    "paper_index": 3,
+    "title": "Study on the impact of trade policy uncertainty on the performance of enterprise ESG performance",
+    "authors": "Hanqin Chen, Ye Lu, Huaqin Huang",
+    "year": 2025,
+    "arxiv_id": "2502.01640v1",
+    "arxiv_url": "https://arxiv.org/abs/2502.01640v1",
+    "abstract": "Trade policy uncertainty has become a significant feature of today's global economy. While its impact on free trade is evident, its microeconomic effects remain open to debate. This study explores the influence of trade policy uncertainty on corporate ESG performance and its underlying mechanisms, using data from A-share listed companies in China from 2010 to 2020. The findings reveal that increased trade policy uncertainty significantly and robustly enhances corporate ESG performance. Heterogeneity analysis indicates that high-tech enterprises are better equipped to improve their ESG performance in response to trade policy uncertainty. Furthermore, strengthening internal controls and appointing CEOs with environmental backgrounds also help firms seize the opportunities arising from trade policy uncertainty. In terms of mechanisms, trade policy uncertainty intensifies industry competition, compelling firms to enhance their ESG performance to gain market share. Additionally, it stimulates green technological innovation, further optimizing ESG outcomes. Therefore, efforts should focus on improving the ESG standards system, establishing ESG incentive policies, increasing the transparency and predictability of trade policies, and promoting corporate green development to advance national sustainable development goals."
+  },
+  {
+    "paper_index": 4,
+    "title": "Evolution of ESG-focused DLT Research: An NLP Analysis of the Literature",
+    "authors": "Walter Hernandez Cruz, Kamil Tylinski, Alastair Moore, Niall Roche, Nikhil Vadgama, Horst Treiblmaier, Jiangbo Shangguan, Paolo Tasca, Jiahua Xu",
+    "year": 2023,
+    "arxiv_id": "2308.12420v4",
+    "arxiv_url": "https://arxiv.org/abs/2308.12420v4",
+    "abstract": "Distributed Ledger Technology (DLT) faces increasing environmental scrutiny, particularly concerning the energy consumption of the Proof of Work (PoW) consensus mechanism and broader Environmental, Social, and Governance (ESG) issues. However, existing systematic literature reviews of DLT rely on limited analyses of citations, abstracts, and keywords, failing to fully capture the field's complexity and ESG concerns. We address these challenges by analyzing the full text of 24,539 publications using Natural Language Processing (NLP) with our manually labeled Named Entity Recognition (NER) dataset of 39,427 entities for DLT. This methodology identified 505 key publications at the DLT/ESG intersection, enabling comprehensive domain analysis. Our combined NLP and temporal graph analysis reveals critical trends in DLT evolution and ESG impacts, including cryptography and peer-to-peer networks research's foundational influence, Bitcoin's persistent impact on research and environmental concerns (a \"Lindy effect\"), Ethereum's catalytic role on Proof of Stake (PoS) and smart contract adoption, and the industry's progressive shift toward energy-efficient consensus mechanisms. Our contributions include the first DLT-specific NER dataset addressing the scarcity of high-quality labeled NLP data in blockchain research, a methodology integrating NLP and temporal graph analysis for large-scale interdisciplinary literature reviews, and the first NLP-driven literature review focusing on DLT's ESG aspects."
+  },
+  {
+    "paper_index": 5,
+    "title": "Performance of Genetic Algorithms in the Context of Software Model Refactoring",
+    "authors": "Vittorio Cortellessa, Daniele Di Pompeo, Michele Tucci",
+    "year": 2023,
+    "arxiv_id": "2308.13875v1",
+    "arxiv_url": "https://arxiv.org/abs/2308.13875v1",
+    "abstract": "Software systems continuously evolve due to new functionalities, requirements, or maintenance activities. In the context of software evolution, software refactoring has gained a strategic relevance. The space of possible software refactoring is usually very large, as it is given by the combinations of different refactoring actions that can produce software system alternatives. Multi-objective algorithms have shown the ability to discover alternatives by pursuing different objectives simultaneously. Performance of such algorithms in the context of software model refactoring is of paramount importance. Therefore, in this paper, we conduct a performance analysis of three genetic algorithms to compare them in terms of performance and quality of solutions. Our results show that there are significant differences in performance among the algorithms (e.g., PESA2 seems to be the fastest one, while NSGA-II shows the least memory usage)."
+  },
+  {
+    "paper_index": 6,
+    "title": "Firm Projects, NPV and Risk",
+    "authors": "Jana Hudakova, Ondrej Hudak",
+    "year": 2005,
+    "arxiv_id": "physics/0509102v2",
+    "arxiv_url": "https://arxiv.org/abs/physics/0509102v2",
+    "abstract": "An investor is estimating net present value of a firm project and performs risk analysis. Usually it is created portfolio hierarchies and make comparison of variants of project based on these hierarchies. Then one finds that portfolio which corresponds to the particular needs of individual groups within the firm. We have formulated a new type of NPV analysis based on the fact that normal distribution of NPV is observed for some projects in some industries. The expected risk of the project is given by variance, in which there is the standard deviation of the year n cash flow, the standard deviation of the investment I in the time zero, the correlation coefficient of the year n cash flow deviation from the average and of the investment I at time zero deviation from the mean investment at time zero, the correlation coefficient of the year n cash flow deviation from the average and of the year n' cash flow deviation from the average. The aim function of the investor into the project was found. The investor is characterized by the constant A. The larger constant A the larger preference is given to the project NPV and the larger acceptable risk of the project, and vice versa. We have found that there are contributions in which we have the aim-function-like contribution to the aim function, which is discounted and in which the risk of the n-th year risk is discounted in the second order. Further there is aim-function-like contribution to the aim-function which comes from the initial investment I and its risk."
+  },
+  {
+    "paper_index": 7,
+    "title": "An Instrumental Variables Approach to Testing Firm Conduct under a Bertrand-Nash Framework",
+    "authors": "Youngjin Hong, In Kyung Kim, Kyoo il Kim",
+    "year": 2025,
+    "arxiv_id": "2501.05022v4",
+    "arxiv_url": "https://arxiv.org/abs/2501.05022v4",
+    "abstract": "Understanding firm conduct is crucial for industrial organization and antitrust policy. In this article, we develop a testing procedure based on the Rivers and Vuong non-nested model selection framework. Unlike existing methods that require estimating the demand and supply system, our approach compares the model fit of two first-stage price regressions. Through an extensive Monte Carlo study, we demonstrate that our test performs comparably to, or outperforms, existing methods in detecting collusion across various collusive scenarios. The results are robust to model misspecification, alternative functional forms for instruments, and data limitations. By simplifying the diagnosis of firm behavior, our method offers researchers and regulators an efficient tool for assessing industry conduct under a Bertrand oligopoly framework. Additionally, our approach offers a practical guideline for enhancing the strength of BLP-style instruments in demand estimation: once collusion is detected, researchers are advised to incorporate the product characteristics of colluding partners into own-firm instruments while excluding them from other-firm instruments."
+  },
+  {
+    "paper_index": 8,
+    "title": "Modeling Firm-Level ESG-Sentiment Interactions in Stock Returns: Evidence from 16 Companies Using Retrofitted Word Embeddings",
+    "authors": "Sangdeok Lee",
+    "year": 2025,
+    "arxiv_id": "2507.11485v4",
+    "arxiv_url": "https://arxiv.org/abs/2507.11485v4",
+    "abstract": "This study investigates how emotion-specific sentiment embedded in financial news headlines interacts with firm-level Environmental, Social, and Governance (ESG) ratings to influence stock return behavior. Addressing key methodological gaps in existing literature, the analysis leverages Retrofitted Word Embeddings to encode discrete emotional cues tailored to ESG-relevant narratives. Unlike prior studies that rely on lexicon-based or transformer-based models, this approach explicitly incorporates domain-specific emotional semantics while accounting for firm-level heterogeneity and temporal sentiment fluctuations. Using a dataset of 16 multinational firms and sentiment data extracted from Seeking Alpha headlines, the study tests three hypotheses: (1) emotion-specific sentiment independently predicts stock returns; (2) the moderating effect of sentiment varies across ESG dimensions; and (3) positive (negative) sentiment amplifies (dampens) ESG performance effects. The analysis implements a dual sentiment aggregation strategy and introduces a triple-significance filtering criterion to identify robust interactions. Results support Hypotheses 1 and 2, with emotions such as anticipation and trust showing consistent associations with return variation across firms and ESG categories. However, findings for Hypothesis 3 are mixed: while some sentiment-ESG combinations align with theoretical expectations, many contradictory interactions exhibit stronger effects. In this study, retrofitted embeddings outperform the NRC Emotion Lexicon in explaining stock return variation within ESG-sentiment interaction models, underscoring the value of emotional nuance in ESG-finance modeling. These results underscore the importance of emotion-sensitive sentiment modeling in understanding investor behavior and ESG-related stock price movements."
+  },
+  {
+    "paper_index": 9,
+    "title": "Sustainable Investment: ESG Impacts on Large Portfolio",
+    "authors": "Ruike Wu, Yonghe Lu, Yanrong Yang",
+    "year": 2026,
+    "arxiv_id": "2602.14439v1",
+    "arxiv_url": "https://arxiv.org/abs/2602.14439v1",
+    "abstract": "This paper investigates the impact of environmental, social, and governance (ESG) constraint on a regularized mean-variance (MV) portfolio optimization problem in a large-dimensional setting, in which a positive definite regularization matrix is imposed on the sample covariance matrix. We first derive the asymptotic results for the out-of-sample (OOS) Sharpe ratio (SR) of the proposed portfolio, which help quantify the impact of imposing an ESG-level constraint as well as the effect of estimation error arising from the sample mean estimation of the assets' ESG score. Furthermore, to study the influence of the choices of the regularization matrix, we develop an estimator for the OOS Sharpe ratio. The corresponding asymptotic properties of the Sharpe ratio estimator are established based on random matrix theory. Simulation results show that the proposed estimators perform close to the corresponding oracle level. Moreover, we numerically investigate the impact of various forms of regularization matrices on the OOS SR, which provides useful guidance for practical implementation. Finally, based on OOS SR estimator, we propose an adaptive regularized portfolio which uses the best regularization matrix yielding the highest estimated SR (among a set of candidates) at each decision node. Empirical evidence based on the S\\&P 500 index demonstrates that the proposed adaptive ESG-constrained portfolio achieves a high OOS SR while satisfying the required ESG level, offering a practically effective approach for sustainable investment."
+  },
+  {
+    "paper_index": 10,
+    "title": "SOE's ESG Performance on Financial Flexibility: The Evidence from the Hong Kong Stock Market",
+    "authors": "Yan Li",
+    "year": 2025,
+    "arxiv_id": "2502.14261v1",
+    "arxiv_url": "https://arxiv.org/abs/2502.14261v1",
+    "abstract": "As the global economic environment becomes increasingly unstable, enhancing financial flexibility to cope with risks has become the consensus of many companies. At the same time, environmental, social, and governance (ESG) performance may be one of the effective ways. We studied the impact of a firm's ESG performance on its financial flexibility with a sample of companies listed on the Hong Kong stock market from 2018 to 2022. The empirical results show that good environmental, social and governance performance can significantly improve a firm's financial flexibility. In addition, this paper also finds that the influence of ESG performance on financial flexibility is weak for state-owned enterprises due to the influence of governance structure and market characteristics. Finally, the further analysis shows that there is a mediating role played by financing constraints in this process. This study can provide background information for state-owned enterprises' governance, information disclosure, and corporate operations. It also has guiding significance for relevant investors, management and officials."
+  },
+  {
+    "paper_index": 11,
+    "title": "Entrepreneurial Motivations and ESG Performance Evidence from Automobile Companies Listed on the Chinese Stock Exchange",
+    "authors": "Jun Cui",
+    "year": 2025,
+    "arxiv_id": "2503.21828v1",
+    "arxiv_url": "https://arxiv.org/abs/2503.21828v1",
+    "abstract": "This study explores the impact of entrepreneurial motivations on ESG performance in Chinese stock exchange listed automobile companies. Using quantitative methods and empirical analysis via STATA software, the research examines baseline stability, endogeneity, heterogeneity, and mediation/moderation mechanisms. A sample of 50 firms from the Shanghai and Shenzhen Stock Exchanges 2003 and 2023 was analyzed. Results indicate that entrepreneurial motivations positively influence ESG performance. mediated by innovation capability and moderated by market competition intensity. These findings offer theoretical and practical insights, aligning with Stakeholder and institutional theories. The study provides a robust framework for understanding strategic ESG behavior in Chinas automobile sector."
+  },
+  {
+    "paper_index": 12,
+    "title": "Enhancing ESG Impact Type Identification through Early Fusion and Multilingual Models",
+    "authors": "Hariram Veeramani, Surendrabikram Thapa, Usman Naseem",
+    "year": 2024,
+    "arxiv_id": "2402.10772v1",
+    "arxiv_url": "https://arxiv.org/abs/2402.10772v1",
+    "abstract": "In the evolving landscape of Environmental, Social, and Corporate Governance (ESG) impact assessment, the ML-ESG-2 shared task proposes identifying ESG impact types. To address this challenge, we present a comprehensive system leveraging ensemble learning techniques, capitalizing on early and late fusion approaches. Our approach employs four distinct models: mBERT, FlauBERT-base, ALBERT-base-v2, and a Multi-Layer Perceptron (MLP) incorporating Latent Semantic Analysis (LSA) and Term Frequency-Inverse Document Frequency (TF-IDF) features. Through extensive experimentation, we find that our early fusion ensemble approach, featuring the integration of LSA, TF-IDF, mBERT, FlauBERT-base, and ALBERT-base-v2, delivers the best performance. Our system offers a comprehensive ESG impact type identification solution, contributing to the responsible and sustainable decision-making processes vital in today's financial and corporate governance landscape."
+  },
+  {
+    "paper_index": 13,
+    "title": "Empirical Analysis of Digital Innovations Impact on Corporate ESG Performance: The Mediating Role of GAI Technology",
+    "authors": "Jun Cui",
+    "year": 2025,
+    "arxiv_id": "2504.01041v1",
+    "arxiv_url": "https://arxiv.org/abs/2504.01041v1",
+    "abstract": "This study investigates the relationship between corporate digital innovation and Environmental, Social, and Governance (ESG) performance, with a specific focus on the mediating role of Generative artificial intelligence technology adoption. Using a comprehensive panel dataset of 8,000 observations from the CMARS and WIND database spanning from 2015 to 2023, we employ multiple econometric techniques to examine this relationship. Our findings reveal that digital innovation significantly enhances corporate ESG performance, with GAI technology adoption serving as a crucial mediating mechanism. Specifically, digital innovation positively influences GAI technology adoption, which subsequently improves ESG performance. Furthermore, our heterogeneity analysis indicates that this relationship varies across firm size, industry type, and ownership structure. Finally, our results remain robust after addressing potential endogeneity concerns through instrumental variable estimation, propensity score matching, and differenc in differences approaches. This research contributes to the growing literature on technologydriven sustainability transformations and offers practical implications for corporate strategy and policy development in promoting sustainable business practices through technological advancement."
+  },
+  {
+    "paper_index": 14,
+    "title": "Performance Analysis of Software to Hardware Task Migration in Codesign",
+    "authors": "Dorsaf Sebai, Abderrazak Jemai, Imed Bennour",
+    "year": 2010,
+    "arxiv_id": "1002.1154v1",
+    "arxiv_url": "https://arxiv.org/abs/1002.1154v1",
+    "abstract": "The complexity of multimedia applications in terms of intensity of computation and heterogeneity of treated data led the designers to embark them on multiprocessor systems on chip. The complexity of these systems on one hand and the expectations of the consumers on the other hand complicate the designers job to conceive and supply strong and successful systems in the shortest deadlines. They have to explore the different solutions of the design space and estimate their performances in order to deduce the solution that respects their design constraints. In this context, we propose the modeling of one of the design space possible solutions: the software to hardware task migration. This modeling exploits the synchronous dataflow graphs to take into account the different migration impacts and estimate their performances in terms of throughput."
+  },
+  {
+    "paper_index": 15,
+    "title": "ESG-Valued Portfolio Optimization and Dynamic Asset Pricing",
+    "authors": "Davide Lauria, W. Brent Lindquist, Stefan Mittnik, Svetlozar T. Rachev",
+    "year": 2022,
+    "arxiv_id": "2206.02854v1",
+    "arxiv_url": "https://arxiv.org/abs/2206.02854v1",
+    "abstract": "ESG ratings provide a quantitative measure for socially responsible investment. We present a unified framework for incorporating numeric ESG ratings into dynamic pricing theory. Specifically, we introduce an ESG-valued return that is a linearly constrained transformation of financial return and ESG score. This leads to a more complex portfolio optimization problem in a space governed by reward, risk and ESG score. The framework preserves the traditional risk aversion parameter and introduces an ESG affinity parameter. We apply this framework to develop ESG-valued: portfolio optimization; capital market line; risk measures; option pricing; and the computation of shadow riskless rates."
+  },
+  {
+    "paper_index": 16,
+    "title": "A Performance Study of GA and LSH in Multiprocessor Job Scheduling",
+    "authors": "S. R. Vijayalakshmi, G. Padmavathi",
+    "year": 2010,
+    "arxiv_id": "1002.1149v1",
+    "arxiv_url": "https://arxiv.org/abs/1002.1149v1",
+    "abstract": "Multiprocessor task scheduling is an important and computationally difficult problem. This paper proposes a comparison study of genetic algorithm and list scheduling algorithm. Both algorithms are naturally parallelizable but have heavy data dependencies. Based on experimental results, this paper presents a detailed analysis of the scalability, advantages and disadvantages of each algorithm. Multiprocessors have emerged as a powerful computing means for running real-time applications, especially where a uni-processor system would not be sufficient enough to execute all the tasks. The high performance and reliability of multiprocessors have made them a powerful computing resource. Such computing environment requires an efficient algorithm to determine when and on which processor a given task should execute. In multiprocessor systems, an efficient scheduling of a parallel program onto the processors that minimizes the entire execution time is vital for achieving a high performance. This scheduling problem is known to be NP- Hard. In multiprocessor scheduling problem, a given program is to be scheduled in a given multiprocessor system such that the program's execution time is minimized. The last job must be completed as early as possible. Genetic algorithm (GA) is one of the widely used techniques for constrained optimization."
+  },
+  {
+    "paper_index": 17,
+    "title": "Bayesian Optimization of ESG Financial Investments",
+    "authors": "Eduardo C. Garrido-Merchán, Gabriel González Piris, Maria Coronado Vaca",
+    "year": 2023,
+    "arxiv_id": "2303.01485v1",
+    "arxiv_url": "https://arxiv.org/abs/2303.01485v1",
+    "abstract": "Financial experts and analysts seek to predict the variability of financial markets. In particular, the correct prediction of this variability ensures investors successful investments. However, there has been a big trend in finance in the last years, which are the ESG criteria. Concretely, ESG (Economic, Social and Governance) criteria have become more significant in finance due to the growing importance of investments being socially responsible, and because of the financial impact companies suffer when not complying with them. Consequently, creating a stock portfolio should not only take into account its performance but compliance with ESG criteria. Hence, this paper combines mathematical modelling, with ESG and finance. In more detail, we use Bayesian optimization (BO), a sequential state-of-the-art design strategy to optimize black-boxes with unknown analytical and costly-to compute expressions, to maximize the performance of a stock portfolio under the presence of ESG criteria soft constraints incorporated to the objective function. In an illustrative experiment, we use the Sharpe ratio, that takes into consideration the portfolio returns and its variance, in other words, it balances the trade-off between maximizing returns and minimizing risks. In the present work, ESG criteria have been divided into fourteen independent categories used in a linear combination to estimate a firm total ESG score. Most importantly, our presented approach would scale to alternative black-box methods of estimating the performance and ESG compliance of the stock portfolio. In particular, this research has opened the door to many new research lines, as it has proved that a portfolio can be optimized using a BO that takes into consideration financial performance and the accomplishment of ESG criteria."
+  },
+  {
+    "paper_index": 18,
+    "title": "ESG Beliefs of Large Language Models: Evidence and Impact",
+    "authors": "Tong Li, Luping Yu",
+    "year": 2025,
+    "arxiv_id": "2601.00836v1",
+    "arxiv_url": "https://arxiv.org/abs/2601.00836v1",
+    "abstract": "We examine whether large language models (LLMs) hold systematic beliefs about environmental, social, and governance (ESG) issues and how these beliefs compare with-and potentially influence-those of human market participants. Based on established surveys originally administered to professional and retail investors, we show that major LLMs exhibit a strong pro-ESG orientation. Compared with human investors, LLMs assign greater financial relevance for ESG performance, expect larger return premia for high-ESG firms, and display a stronger willingness to sacrifice financial returns for ESG improvements. These preferences are highly uniform and values-driven, in contrast to heterogeneous human views. Using a large dataset of analyst reports, we further show that sell-side analysts become significantly more optimistic about high-ESG firms after adopting LLMs for research. Our findings reveal that LLMs embed distinct, coherent ESG beliefs and that these beliefs can shape human judgments, highlighting a new channel through which AI adoption may influence financial markets."
+  },
+  {
+    "paper_index": 19,
+    "title": "Does ESG Consistently Promote the Corporate Financial Performance? A Study of the Global Cruise Industry",
+    "authors": "Yuechen Wu",
+    "year": 2024,
+    "arxiv_id": "2409.00758v1",
+    "arxiv_url": "https://arxiv.org/abs/2409.00758v1",
+    "abstract": "The analysis of determinants of a company's financial performance has aroused significant attention, particularly, the environmental, social, and governance (ESG) has been the research focus in recent years. In addition to increasing revenue, the cruise industry has actively embraced the initiative of \"green shipping\". This study investigates the relationship between ESG and corporate financial performance (CFP) in the global cruise sector. This paper utilizes the sample data from the world's largest cruise companies over 2012-2023, to examine the ESG-CFP relationship by a regression model. The results indicate that ESG practices in cruise companies negatively influence CFP, which is further impacted by financial constraints. Furthermore, the heterogeneity analysis suggests that the high time interest earned (TIE) ratios and low total annual greenhouse gas (GHG) emissions worsen the adverse impacts of ESG on CFP. These findings contribute to the theoretical research on ESG and provide practical guidance for cruise industry operators and investors in their decision-making."
+  },
+  {
+    "paper_index": 20,
+    "title": "Value-chain oriented identification of indicators to establish a comprehensive process improvement framework",
+    "authors": "Ute Riemann",
+    "year": 2013,
+    "arxiv_id": "1310.3230v1",
+    "arxiv_url": "https://arxiv.org/abs/1310.3230v1",
+    "abstract": "The process development and optimization potential needs to be driven by the individial coporate value chain. The identification of this specific value chain and the related indicators is essential to limit the scope of any analysis and optimization to the core business The process framework consisting of clearly defined value chain, the related processes and the corresponding indicators is a pre-requisite for a meaningful and efficient process analysis and continuous process optimization."
+  },
+  {
+    "paper_index": 21,
+    "title": "Firm non-expansive mappings in weak metric spaces",
+    "authors": "Armando W. Gutiérrez, Cormac Walsh",
+    "year": 2021,
+    "arxiv_id": "2110.13195v2",
+    "arxiv_url": "https://arxiv.org/abs/2110.13195v2",
+    "abstract": "We introduce the notion of firm non-expansive mapping in weak metric spaces, extending previous work for Banach spaces and certain geodesic spaces. We prove that, for firm non-expansive mappings, the minimal displacement, the linear rate of escape, and the asymptotic step size are all equal. This generalises a theorem by Reich and Shafrir."
+  },
+  {
+    "paper_index": 22,
+    "title": "ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation",
+    "authors": "Siqi Sun, Ben Peng Wu, Mali Jin, Peizhen Bai, Hanpei Zhang, Xingyi Song",
+    "year": 2026,
+    "arxiv_id": "2603.13154v1",
+    "arxiv_url": "https://arxiv.org/abs/2603.13154v1",
+    "abstract": "As corporate responsibility increasingly incorporates environmental, social, and governance (ESG) criteria, ESG reporting is becoming a legal requirement in many regions and a key channel for documenting sustainability practices and assessing firms' long-term and ethical performance. However, the length and complexity of ESG disclosures make them difficult to interpret and automate the analysis reliably. To support scalable and trustworthy analysis, this paper introduces ESG-Bench, a benchmark dataset for ESG report understanding and hallucination mitigation in large language models (LLMs). ESG-Bench contains human-annotated question-answer (QA) pairs grounded in real-world ESG report contexts, with fine-grained labels indicating whether model outputs are factually supported or hallucinated. Framing ESG report analysis as a QA task with verifiability constraints enables systematic evaluation of LLMs' ability to extract and reason over ESG content and provides a new use case: mitigating hallucinations in socially sensitive, compliance-critical settings. We design task-specific Chain-of-Thought (CoT) prompting strategies and fine-tune multiple state-of-the-art LLMs on ESG-Bench using CoT-annotated rationales. Our experiments show that these CoT-based methods substantially outperform standard prompting and direct fine-tuning in reducing hallucinations, and that the gains transfer to existing QA benchmarks beyond the ESG domain."
+  },
+  {
+    "paper_index": 23,
+    "title": "Jetsons at FinNLP 2024: Towards Understanding the ESG Impact of a News Article using Transformer-based Models",
+    "authors": "Parag Pravin Dakle, Alolika Gon, Sihan Zha, Liang Wang, SaiKrishna Rallabandi, Preethi Raghavan",
+    "year": 2024,
+    "arxiv_id": "2404.00386v1",
+    "arxiv_url": "https://arxiv.org/abs/2404.00386v1",
+    "abstract": "In this paper, we describe the different approaches explored by the Jetsons team for the Multi-Lingual ESG Impact Duration Inference (ML-ESG-3) shared task. The shared task focuses on predicting the duration and type of the ESG impact of a news article. The shared task dataset consists of 2,059 news titles and articles in English, French, Korean, and Japanese languages. For the impact duration classification task, we fine-tuned XLM-RoBERTa with a custom fine-tuning strategy and using self-training and DeBERTa-v3 using only English translations. These models individually ranked first on the leaderboard for Korean and Japanese and in an ensemble for the English language, respectively. For the impact type classification task, our XLM-RoBERTa model fine-tuned using a custom fine-tuning strategy ranked first for the English language."
+  },
+  {
+    "paper_index": 24,
+    "title": "Crosswashing in Sustainable Investing: Unveiling Strategic Practices Impacting ESG Scores",
+    "authors": "Bertrand Kian Hassani, Yacoub Bahini",
+    "year": 2024,
+    "arxiv_id": "2407.00751v1",
+    "arxiv_url": "https://arxiv.org/abs/2407.00751v1",
+    "abstract": "This paper introduces and defines a novel concept in sustainable investing, termed crosswashing, and explore its impact on ESG (Environmental, Social, and Governance) ratings through quantitative analysis using a Multi-Criteria Decision Making (MCDM) model. The study emphasises that this specific form of greenwashing is not currently considered in existing ESG assessments, potentially leading to an inflated perception of corporate ethical practices. Unlike traditional greenwashing, crosswashing involves companies strategically investing in sustainable activities to boost Environmental, Social, and Governance (ESG) scores while preserving nonsustainable core operations. By unveiling the nuances of crosswashing, the research contributes to a more nuanced understanding of sustainable investing, offering insights for improved evaluation and regulation of corporate environmental and ethical responsibilities."
+  },
+  {
+    "paper_index": 25,
+    "title": "Causal Impact Of European Union Emission Trading Scheme On Firm Behaviour And Economic Performance: A Study Of German Manufacturing Firms",
+    "authors": "Nitish Gupta, Jay Shah, Satwik Gupta, Ruchir Kaul",
+    "year": 2021,
+    "arxiv_id": "2108.07163v1",
+    "arxiv_url": "https://arxiv.org/abs/2108.07163v1",
+    "abstract": "In this paper, we estimate the causal impact (i.e. Average Treatment Effect, ATT) of the EU ETS on GHG emissions and firm competitiveness (primarily measured by employment, turnover, and exports levels) by combining a difference-in-differences approach with semi-parametric matching techniques and estimators an to investigate the effect of the EU ETS on the economic performance of these German manufacturing firms using a Stochastic Production Frontier model."
+  },
+  {
+    "paper_index": 26,
+    "title": "The Effect of Marketing Investment on Firm Value and Systematic Risk",
+    "authors": "Musaab Mousa, Saeed Nosratabadi, Judit Sagi, Amir Mosavi",
+    "year": 2021,
+    "arxiv_id": "2104.14301v1",
+    "arxiv_url": "https://arxiv.org/abs/2104.14301v1",
+    "abstract": "Analyzing the financial benefit of marketing is still a critical topic for both practitioners and researchers. Companies consider marketing costs as a type of investment and expect this investment to be returned to the company in the form of profit. On the other hand, companies adopt different innovative strategies to increase their value. Therefore, this study aims to test the impact of marketing investment on firm value and systematic risk. To do so, data related to four Arabic emerging markets during the period 2010-2019 are considered, and firm share price and beta share are considered to measure firm value and systematic risk, respectively. Since a firm's ownership concentration is a determinant factor in firm value and systematic risk, this variable is considered a moderated variable in the relationship between marketing investment and firm value and systematic risk. The findings of the study, using panel data regression, indicate that increasing investment in marketing has a positive effect on the firm value valuation model. It is also found that the ownership concentration variable has a reinforcing role in the relationship between marketing investment and firm value. It is also disclosed that it moderates the systematic risk aligned with the monitoring impact of controlling shareholders. This study provides a logical combination of governance-marketing dimensions to interpret performance indicators in the capital market."
+  },
+  {
+    "paper_index": 27,
+    "title": "The Impact of Digital Financial Services on Firm's Performance: a Literature Review",
+    "authors": "Tariq Abbasi, Hans Weigand",
+    "year": 2017,
+    "arxiv_id": "1705.10294v1",
+    "arxiv_url": "https://arxiv.org/abs/1705.10294v1",
+    "abstract": "Digital Financial Services continue to expand and replace the delivery of traditional banking services to the customers through innovative technologies to meet the growing complex needs and globalization challenges. These diversified digital products help the organizations (service providers) to improve their firm performance and to remain competitive in the market. It also assists in increasing market share to grow their profitability and improve financial position. There is a growing literature on Digital Financial Services and firm performance. At this point of the development, this paper systemically reviews the existing (within last one decade) amount of literature investigating the impact of DFS on firm performance, analyzes and identifies the research gaps. We identify 39 works that have appeared in a wide range of peer-reviewed scientific journals. We classify the methodologies and approaches that researchers have used to predict the effect of such services on the financial growth and profitability. We observe that despite rapid technological advancement in DFS during the last ten years, Digital Financial Services being the factor affecting firm performance did not get the reasonable attention in academic literature. One of the reason is that almost all the authors limit their research to banking sector while ignoring others particularly mobile network operators (providing branchless banking) and new non-banking entrants. We also notice that newer researchers often ignore past research and investigate the same issues. This study also makes several recommendations and suggest directions for future research in this still emerging field."
+  },
+  {
+    "paper_index": 28,
+    "title": "Fund Characteristics and Performances of Socially Responsible Mutual Funds: Do ESG Ratings Play a Role?",
+    "authors": "Nandita Das, Bernadette Ruf, Swarn Chatterjee, Aman Sunder",
+    "year": 2018,
+    "arxiv_id": "1806.09906v2",
+    "arxiv_url": "https://arxiv.org/abs/1806.09906v2",
+    "abstract": "This paper examines the risk-adjusted performance and differential fund flows for socially responsible mutual funds (SRMF). The results show that SRMF rated high on ESG, perform better than lower rated ESG funds during the period of economic crisis. The findings also show that low ESG rated SRMF had higher differential cash-flows than high rated ESG funds except for the period of economic down turn. The findings are of interest to financial advisors, investors, mutual fund managers, and researchers on how SRMF performance responds to periods of economic downturn and expansion"
+  },
+  {
+    "paper_index": 29,
+    "title": "Study Of German Manufacturing Firms: Causal Impact Of European Union Emission Trading Scheme On Firm Behaviour And Economic Performance",
+    "authors": "Nitish Gupta, Ruchir Kaul, Satwik Gupta, Jay Shah",
+    "year": 2021,
+    "arxiv_id": "2108.07116v1",
+    "arxiv_url": "https://arxiv.org/abs/2108.07116v1",
+    "abstract": "The results based on the nonparametric nearest neighbor matching suggest a statistically significant positive effect of the EU ETS on the economic performance of the regulated firms during Phase I of the EU ETS. A year-by-year analysis shows that the effect was only significant during the first year of Phase I. The EU ETS, therefore, had a particularly strong effect when it was introduced. It is important to note that the EU ETS does not homogeneously affect firms in the manufacturing sector. We found a significant positive impact of EU ETS on the economic performance of regulated firms in the paper industry."
+  },
+  {
+    "paper_index": 30,
+    "title": "A Metric for Performance Portability",
+    "authors": "S. J. Pennycook, J. D. Sewall, V. W. Lee",
+    "year": 2016,
+    "arxiv_id": "1611.07409v1",
+    "arxiv_url": "https://arxiv.org/abs/1611.07409v1",
+    "abstract": "The term \"performance portability\" has been informally used in computing to refer to a variety of notions which generally include: 1) the ability to run one application across multiple hardware platforms; and 2) achieving some notional level of performance on these platforms. However, there has been a noticeable lack of consensus on the precise meaning of the term, and authors' conclusions regarding their success (or failure) to achieve performance portability have thus been subjective. Comparing one approach to performance portability with another has generally been marked with vague claims and verbose, qualitative explanation of the comparison. This paper presents a concise definition for performance portability, along with a simple metric that accurately captures the performance and portability of an application across different platforms. The utility of this metric is then demonstrated with a retroactive application to previous work."
+  },
+  {
+    "paper_index": 31,
+    "title": "ESG In Corporate Filings: An AI Perspective",
+    "authors": "Irene Aldridge, Payton Martin",
+    "year": 2022,
+    "arxiv_id": "2212.00018v1",
+    "arxiv_url": "https://arxiv.org/abs/2212.00018v1",
+    "abstract": "Our main contribution is that we are using AI to discern the key drivers of variation of ESG mentions in the corporate filings. With AI, we are able to separate \"dimensions\" along which the corporate management presents their ESG policies to the world. These dimensions are 1) diversity, 2) hazardous materials, and 3) greenhouse gasses. We are also able to identify separate \"background\" dimensions of unofficial ESG activity in the firms, which provide more color into the firms and their shareholders' thinking about their ESG processes. We then measure investors' response to the ESG activity \"factors\". The AI techniques presented can assist in building better, more reliable and useful ESG ratings systems."
+  },
+  {
+    "paper_index": 32,
+    "title": "ESG Signaling on Wall Street in the AI Era",
+    "authors": "Qionghua Chu",
+    "year": 2025,
+    "arxiv_id": "2510.15956v1",
+    "arxiv_url": "https://arxiv.org/abs/2510.15956v1",
+    "abstract": "I identify a new signaling channel in ESG research by empirically examining whether environmental, social, and governance (ESG) investing remains valuable as large institutional investors increasingly shift toward artificial intelligence (AI). Using winsorized ESG scores of S&P 500 firms from Yahoo Finance and controlling for market value of equity, I conduct cross-sectional regressions to test the signaling mechanism. I demonstrate that Environmental, Social, Governance, and composite ESG scores strongly and positively signal higher debt-to-total-capital ratio, both individually and in various combinations. My findings contribute to the growing literature on ESG investing, offering economically meaningful signaling channel with implications for long-term portfolio management amid the rise of AI."
+  },
+  {
+    "paper_index": 33,
+    "title": "Enhanced Cluster Computing Performance Through Proportional Fairness",
+    "authors": "Thomas Bonald, James Roberts",
+    "year": 2014,
+    "arxiv_id": "1404.2266v1",
+    "arxiv_url": "https://arxiv.org/abs/1404.2266v1",
+    "abstract": "The performance of cluster computing depends on how concurrent jobs share multiple data center resource types like CPU, RAM and disk storage. Recent research has discussed efficiency and fairness requirements and identified a number of desirable scheduling objectives including so-called dominant resource fairness (DRF). We argue here that proportional fairness (PF), long recognized as a desirable objective in sharing network bandwidth between ongoing flows, is preferable to DRF. The superiority of PF is manifest under the realistic modelling assumption that the population of jobs in progress is a stochastic process. In random traffic the strategy-proof property of DRF proves unimportant while PF is shown by analysis and simulation to offer a significantly better efficiency-fairness tradeoff."
+  },
+  {
+    "paper_index": 34,
+    "title": "ESG Sentiment Analysis: comparing human and language model performance including GPT",
+    "authors": "Karim Derrick",
+    "year": 2024,
+    "arxiv_id": "2402.16650v1",
+    "arxiv_url": "https://arxiv.org/abs/2402.16650v1",
+    "abstract": "In this paper we explore the challenges of measuring sentiment in relation to Environmental, Social and Governance (ESG) social media. ESG has grown in importance in recent years with a surge in interest from the financial sector and the performance of many businesses has become based in part on their ESG related reputations. The use of sentiment analysis to measure ESG related reputation has developed and with it interest in the use of machines to do so. The era of digital media has created an explosion of new media sources, driven by the growth of social media platforms. This growing data environment has become an excellent source for behavioural insight studies across many disciplines that includes politics, healthcare and market research. Our study seeks to compare human performance with the cutting edge in machine performance in the measurement of ESG related sentiment. To this end researchers classify the sentiment of 150 tweets and a reliability measure is made. A gold standard data set is then established based on the consensus of 3 researchers and this data set is then used to measure the performance of different machine approaches: one based on the VADER dictionary approach to sentiment classification and then multiple language model approaches, including Llama2, T5, Mistral, Mixtral, FINBERT, GPT3.5 and GPT4."
+  },
+  {
+    "paper_index": 35,
+    "title": "Human-AI Technology Integration and Green ESG Performance: Evidence from Chinese Retail Enterprises",
+    "authors": "Jun Cui",
+    "year": 2025,
+    "arxiv_id": "2507.03057v1",
+    "arxiv_url": "https://arxiv.org/abs/2507.03057v1",
+    "abstract": "This study examines the relationship between human-AI technology integration transformation and green Environmental, Social, and Governance (ESG) performance in Chinese retail enterprises, with green technology innovation serving as a mediating mechanism. Using panel data comprising 5,400 firm-year observations from 2019 to 2023, sourced from CNRDS and CSMAR databases, we employ fixed-effects regression models to investigate this relationship. Our findings reveal that human-AI technology integration significantly enhances green ESG performance, with green technology innovation serving as a crucial mediating pathway. The results demonstrate that a one standard-deviation increase in human-AI integration leads to a 12.7% improvement in green ESG scores. The mediation analysis confirms that approximately 35% of this effect operates through enhanced green technology innovation capabilities. Heterogeneity analysis reveals stronger effects among larger firms, state-owned enterprises, and companies in developed regions. These findings contribute to the growing literature on digital transformation and sustainability by providing empirical evidence of the mechanisms through which AI integration drives environmental performance improvements in emerging markets."
+  },
+  {
+    "paper_index": 36,
+    "title": "ESG, Risk, and (Tail) Dependence",
+    "authors": "Karoline Bax, Özge Sahin, Claudia Czado, Sandra Paterlini",
+    "year": 2021,
+    "arxiv_id": "2105.07248v2",
+    "arxiv_url": "https://arxiv.org/abs/2105.07248v2",
+    "abstract": "While environmental, social, and governance (ESG) trading activity has been a distinctive feature of financial markets, the debate if ESG scores can also convey information regarding a company's riskiness remains open. Regulatory authorities, such as the European Banking Authority (EBA), have acknowledged that ESG factors can contribute to risk. Therefore, it is important to model such risks and quantify what part of a company's riskiness can be attributed to the ESG scores. This paper aims to question whether ESG scores can be used to provide information on (tail) riskiness. By analyzing the (tail) dependence structure of companies with a range of ESG scores, that is within an ESG rating class, using high-dimensional vine copula modelling, we are able to show that risk can also depend on and be directly associated with a specific ESG rating class. Empirical findings on real-world data show positive not negligible ESG risks determined by ESG scores, especially during the 2008 crisis."
+  },
+  {
+    "paper_index": 37,
+    "title": "Developing an ESG-Oriented Large Language Model through ESG Practices",
+    "authors": "Gabriel Assis, Ayrton Surica, Pedro Kroll, Gabriela Aires, Darian Rabbani, Edson Bollis, Lucas Pellicer, Aline Paes",
+    "year": 2026,
+    "arxiv_id": "2603.20480v1",
+    "arxiv_url": "https://arxiv.org/abs/2603.20480v1",
+    "abstract": "Environmental, Social, and Governance (ESG) considerations play a central role in contemporary financial decision-making. In parallel, Large Language Model (LLM) applications in this domain have primarily emphasized well-defined discriminative tasks, such as classification or scoring, which have proven effective for structured analysis and benchmarking. However, this prevailing focus offers limited support for more interactive and generative ESG scenarios, where embedded domain knowledge and contextual understanding are essential. In this work, we propose an ESG-oriented adaptation pipeline for LLMs that integrates ESG principles not only as a target domain, but also as guiding constraints throughout training and evaluation. Building on the Qwen-3-4B architecture, we explore parameter-efficient adaptation strategies using Low-Rank Adaptation (LoRA) and the Instruction-Residual Method (IRM) to produce three ESG-specialized models. We evaluate the proposed models on ESG question answering under both zero-shot and knowledge-augmented settings, using a diverse set of generative, semantic, readability, and environmental impact metrics. Our results show that the ESG-adapted models consistently outperform their original counterparts and competitive baselines such as Llama-3 and Gemma-3. Although limitations remain in tool-based knowledge integration, this work establishes a foundation for ESG-oriented language generation and highlights the importance of responsible, domain-aware LLM adaptation."
+  },
+  {
+    "paper_index": 38,
+    "title": "ESG Reputation Risk Matters: An Event Study Based on Social Media Data",
+    "authors": "Maxime L. D. Nicolas, Adrien Desroziers, Fabio Caccioli, Tomaso Aste",
+    "year": 2023,
+    "arxiv_id": "2307.11571v1",
+    "arxiv_url": "https://arxiv.org/abs/2307.11571v1",
+    "abstract": "We investigate the response of shareholders to Environmental, Social, and Governance-related reputational risk (ESG-risk), focusing exclusively on the impact of social media. Using a dataset of 114 million tweets about firms listed on the S&P100 index between 2016 and 2022, we extract conversations discussing ESG matters. In an event study design, we define events as unusual spikes in message posting activity linked to ESG-risk, and we then examine the corresponding changes in the returns of related assets. By focusing on social media, we gain insight into public opinion and investor sentiment, an aspect not captured through ESG controversies news alone. To the best of our knowledge, our approach is the first to distinctly separate the reputational impact on social media from the physical costs associated with negative ESG controversy news. Our results show that the occurrence of an ESG-risk event leads to a statistically significant average reduction of 0.29% in abnormal returns. Furthermore, our study suggests this effect is predominantly driven by Social and Governance categories, along with the \"Environmental Opportunities\" subcategory. Our research highlights the considerable impact of social media on financial markets, particularly in shaping shareholders' perception of ESG reputation. We formulate several policy implications based on our findings."
+  },
+  {
+    "paper_index": 39,
+    "title": "Modeling the Evolutionary Trends in Corporate ESG Reporting: A Study based on Knowledge Management Model",
+    "authors": "Ziyuan Xia, Anchen Sun, Xiaodong Cai, Saixing Zeng",
+    "year": 2023,
+    "arxiv_id": "2309.07001v2",
+    "arxiv_url": "https://arxiv.org/abs/2309.07001v2",
+    "abstract": "Environmental, social, and governance (ESG) reports are globally recognized as a keystone in sustainable enterprise development. However, current literature has not concluded the development of topics and trends in ESG contexts in the twenty-first century. Therefore, We selected 1114 ESG reports from firms in the technology industry to analyze the evolutionary trends of ESG topics by text mining. We discovered the homogenization effect towards low environmental, medium governance, and high social features in the evolution. We also designed a strategic framework to look closer into the dynamic changes of firms' within-industry scores and across-domain importances. We found that companies are gradually converging towards the third quadrant, which indicates that firms contribute less to industrial outstanding and professional distinctiveness in ESG reporting. Firms choose to imitate ESG reports from each other to mitigate uncertainty and enhance behavioral legitimacy."
+  },
+  {
+    "paper_index": 40,
+    "title": "Path-dependent, ESG-valued, option pricing in the Bachelier-Black-Scholes-Merton model",
+    "authors": "Bhathiya Divelgama, Nancy Asare Nyarko, W. Brent Lindquist, Svetlozar T. Rachev, Blessing Omotade",
+    "year": 2025,
+    "arxiv_id": "2509.18099v1",
+    "arxiv_url": "https://arxiv.org/abs/2509.18099v1",
+    "abstract": "We extend the application of the Cherny-Shiryaev-Yor invariance principle to a unified Bachelier-Black-Scholes-Merton (BBSM) dynamic pricing model. This extension incorporates the influence of the history of the dynamics (i.e., the path dynamics) of a market index on stock price changes. We add an ESG rating component to the price of the risky asset (stock), in such a manner that the impact of the ESG rating on the stock valuation can be explored through variation in the value of a single parameter. We develop discrete, binary tree, option pricing under this extended model. Using an empirical data set of 10 stocks chosen from the Nasdaq-100, we fit the model to stock price changes and compare model-based and published European call option prices."
+  },
+  {
+    "paper_index": 41,
+    "title": "Asset management with an ESG mandate",
+    "authors": "Michele Azzone, Emilio Barucci, Davide Stocco",
+    "year": 2024,
+    "arxiv_id": "2403.11622v2",
+    "arxiv_url": "https://arxiv.org/abs/2403.11622v2",
+    "abstract": "We investigate the portfolio frontier and risk premia in equilibrium when institutional investors aim to minimize the tracking error variance under an ESG score mandate. If a negative ESG premium is priced in the market, this mandate can reduce portfolio inefficiency when the return over-performance target is limited. In equilibrium, with asset managers endowed with an ESG mandate and mean-variance investors, a negative ESG premium arises. A result that is supported by empirical data. The negative ESG premium is due to the ESG constraint imposed on institutional investors and is not associated with a risk factor."
+  },
+  {
+    "paper_index": 42,
+    "title": "Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, and Hierarchical Labeling of ESG Report",
+    "authors": "Yan Chen, Yu Zou, Jialei Zeng, Haoran You, Xiaorui Zhou, Aixi Zhong",
+    "year": 2025,
+    "arxiv_id": "2511.16417v3",
+    "arxiv_url": "https://arxiv.org/abs/2511.16417v3",
+    "abstract": "Environmental, Social, and Governance (ESG) principles are reshaping the foundations of global financial governance, transforming capital allocation architectures, regulatory frameworks, and systemic risk coordination mechanisms. However, as the core medium for assessing corporate ESG performance, the ESG reports present significant challenges for large-scale understanding, due to chaotic reading order from slide-like irregular layouts and implicit hierarchies arising from lengthy, weakly structured content. To address these challenges, we propose Pharos-ESG, a unified framework that transforms ESG reports into structured representations through multimodal parsing, contextual narration, and hierarchical labeling. It integrates a reading-order modeling module based on layout flow, hierarchy-aware segmentation guided by table-of-contents anchors, and a multi-modal aggregation pipeline that contextually transforms visual elements into coherent natural language. The framework further enriches its outputs with ESG, GRI, and sentiment labels, yielding annotations aligned with the analytical demands of financial research. Extensive experiments on annotated benchmarks demonstrate that Pharos-ESG consistently outperforms both dedicated document parsing systems and general-purpose multimodal models. In addition, we release Aurora-ESG, the first large-scale public dataset of ESG reports, spanning Mainland China, Hong Kong, and U.S. markets, featuring unified structured representations of multi-modal content, enriched with fine-grained layout and semantic annotations to better support ESG integration in financial governance and decision-making."
+  },
+  {
+    "paper_index": 43,
+    "title": "Managing ESG Ratings Disagreement in Sustainable Portfolio Selection",
+    "authors": "Francesco Cesarone, Manuel Luis Martino, Federica Ricca, Andrea Scozzari",
+    "year": 2023,
+    "arxiv_id": "2312.10739v1",
+    "arxiv_url": "https://arxiv.org/abs/2312.10739v1",
+    "abstract": "Sustainable Investing identifies the approach of investors whose aim is twofold: on the one hand, they want to achieve the best compromise between portfolio risk and return, but they also want to take into account the sustainability of their investment, assessed through some Environmental, Social, and Governance (ESG) criteria. The inclusion of sustainable goals in the portfolio selection process may have an actual impact on financial portfolio performance. ESG indices provided by the rating agencies are generally considered good proxies for the performance in sustainability of an investment, as well as, appropriate measures for Socially Responsible Investments (SRI) in the market. In this framework of analysis, the lack of alignment between ratings provided by different agencies is a crucial issue that inevitably undermines the robustness and reliability of these evaluation measures. In fact, the ESG rating disagreement may produce conflicting information, implying a difficulty for the investor in the portfolio ESG evaluation. This may cause underestimation or overestimation of the market opportunities for a sustainable investment. In this paper, we deal with a multi-criteria portfolio selection problem taking into account risk, return, and ESG criteria. For the ESG evaluation of the securities in the market, we consider more than one agency and propose a new approach to overcome the problem related to the disagreement between the ESG ratings by different agencies. We propose a nonlinear optimization model for our three-criteria portfolio selection problem. We show that it can be reformulated as an equivalent convex quadratic program by exploiting a technique known in the literature as the k-sum optimization strategy. An extensive empirical analysis of the performance of this model is provided on real-world financial data sets."
+  },
+  {
+    "paper_index": 44,
+    "title": "Mediating role of managing information technology and its impact on firm performance: insight from China",
+    "authors": "Aboobucker Ilmudeen, Yukun Bao",
+    "year": 2019,
+    "arxiv_id": "1903.08934v1",
+    "arxiv_url": "https://arxiv.org/abs/1903.08934v1",
+    "abstract": "Purpose: Managing IT with firm performance has always been a debatable topic in literature and practice. Prior studies examining the above relationship have reported mixed results and have yet ignored the eminent managing IT practices. The purpose of this paper is to empirically investigate the relevance of ValIT 2.0 practice in managing IT investment, and its mediating role in the firm performance context. Design,methodology,approach:This paper developed on two themes of literature. First managing IT as a firm's IT capability in order to generate value from IT investment. Second IT as a firm's resource under resource-based view offers firm's competence that deploys potentials in achieving firm performance. The structural equation modeling with PLS techniques used for analyzing data collected from 176 organization's IT, and business executives in China. Findings: The results of this study show empirical evidence that Val-IT's components (value governance, portfolio management, and investment management) are significantly linked to the management of IT, and it found to be a significant mediator between Val-IT components and firm performance. Research implications: This research contributes to the literature and practice by way of highlighting the value generation through managing IT on firm performance. Originality: This study is fully based on ValIT 2.0 with the firm performance where the managing IT mediate this relationship in a country-specific study in China. This study adds to the Chinese information system literature which suffers the lack of empirical studies in the context of management of IT research."
+  },
+  {
+    "paper_index": 45,
+    "title": "Evaluating the performance of state-of-the-art esg domain-specific pre-trained large language models in text classification against existing models and traditional machine learning techniques",
+    "authors": "Tin Yuet Chung, Majid Latifi",
+    "year": 2024,
+    "arxiv_id": "2410.00207v1",
+    "arxiv_url": "https://arxiv.org/abs/2410.00207v1",
+    "abstract": "This research investigates the classification of Environmental, Social, and Governance (ESG) information within textual disclosures. The aim is to develop and evaluate binary classification models capable of accurately identifying and categorizing E, S and G-related content respectively.   The motivation for this research stems from the growing importance of ESG considerations in investment decisions and corporate accountability. Accurate and efficient classification of ESG information is crucial for stakeholders to understand the impact of companies on sustainability and to make informed decisions.   The research uses a quantitative approach involving data collection, data preprocessing, and the development of ESG-focused Large Language Models (LLMs) and traditional machine learning (Support Vector Machines, XGBoost) classifiers. Performance evaluation guides iterative refinement until satisfactory metrics are achieved.   The research compares traditional machine learning techniques (Support Vector Machines, XGBoost), state-of-the-art language model (FinBERT-ESG) and fine-tuned LLMs like Llama 2, by employing standard Natural Language Processing performance metrics such as accuracy, precision, recall, F1-score. A novel fine-tuning method, Qlora, is applied to LLMs, resulting in significant performance improvements across all ESG domains. The research also develops domain-specific fine-tuned models, such as EnvLlama 2-Qlora, SocLlama 2-Qlora, and GovLlama 2-Qlora, which demonstrate impressive results in ESG text classification."
+  },
+  {
+    "paper_index": 46,
+    "title": "ESG: Pipeline-Conscious Efficient Scheduling of DNN Workflows on Serverless Platforms with Shareable GPUs",
+    "authors": "Xinning Hui, Yuanchao Xu, Zhishan Guo, Xipeng Shen",
+    "year": 2024,
+    "arxiv_id": "2404.16812v1",
+    "arxiv_url": "https://arxiv.org/abs/2404.16812v1",
+    "abstract": "Recent years have witnessed increasing interest in machine learning inferences on serverless computing for its auto-scaling and cost effective properties. Existing serverless computing, however, lacks effective job scheduling methods to handle the schedule space dramatically expanded by GPU sharing, task batching, and inter-task relations. Prior solutions have dodged the issue by neglecting some important factors, leaving some large performance potential locked. This paper presents ESG, a new scheduling algorithm that directly addresses the difficulties. ESG treats sharable GPU as a first-order factor in scheduling. It employs an optimality-guided adaptive method by combining A*-search and a novel dual-blade pruning to dramatically prune the scheduling space without compromising the quality. It further introduces a novel method, dominator-based SLO distribution, to ensure the scalability of the scheduler. The results show that ESG can significantly improve the SLO hit rates 61%-80% while saving 47%-187% costs over prior work."
+  },
+  {
+    "paper_index": 47,
+    "title": "Towards an Objective Metric for the Performance of Exact Triangle Count",
+    "authors": "Mark P. Blanco, Scott McMillan, Tze Meng Low",
+    "year": 2020,
+    "arxiv_id": "2009.07935v3",
+    "arxiv_url": "https://arxiv.org/abs/2009.07935v3",
+    "abstract": "The performance of graph algorithms is often measured in terms of the number of traversed edges per second (TEPS). However, this performance metric is inadequate for a graph operation such as exact triangle counting. In triangle counting, execution times on graphs with a similar number of edges can be distinctly different as demonstrated by results from the past Graph Challenge entries. We discuss the need for an objective performance metric for graph operations and the desired characteristics of such a metric such that it more accurately captures the interactions between the amount of work performed and the capabilities of the hardware on which the code is executed. Using exact triangle counting as an example, we derive a metric that captures how certain techniques employed in many implementations improve performance. We demonstrate that our proposed metric can be used to evaluate and compare multiple approaches for triangle counting, using a SIMD approach as a case study against a scalar baseline."
+  },
+  {
+    "paper_index": 48,
+    "title": "Navigating Uncertainty in ESG Investing",
+    "authors": "Jiayue Zhang, Ken Seng Tan, Tony S. Wirjanto, Lysa Porth",
+    "year": 2023,
+    "arxiv_id": "2310.02163v3",
+    "arxiv_url": "https://arxiv.org/abs/2310.02163v3",
+    "abstract": "The widespread confusion among investors regarding Environmental, Social, and Governance (ESG) rankings assigned by rating agencies has underscored a critical issue in sustainable investing. To address this uncertainty, our research has devised methods that not only recognize this ambiguity but also offer tailored investment strategies for different investor profiles. By developing ESG ensemble strategies and integrating ESG scores into a Reinforcement Learning (RL) model, we aim to optimize portfolios that cater to both financial returns and ESG-focused outcomes. Additionally, by proposing the Double-Mean-Variance model, we classify three types of investors based on their risk preferences. We also introduce ESG-adjusted Capital Asset Pricing Models (CAPMs) to assess the performance of these optimized portfolios. Ultimately, our comprehensive approach provides investors with tools to navigate the inherent ambiguities of ESG ratings, facilitating more informed investment decisions."
+  }
+]

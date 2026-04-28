@@ -53,7 +53,7 @@ if not QDRANT_URL or not QDRANT_API_KEY or not OLLAMA_API_KEY:
     )
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-COLLECTION      = "msa8700_m3"
+COLLECTION      = "msa8700_m4"
 EMBED_MODEL     = os.getenv("EMBED_MODEL", "mxbai-embed-large")
 VECTOR_DIM      = int(os.getenv("VECTOR_DIM", "1024"))
 _ollama_base    = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
@@ -98,9 +98,17 @@ else:
 # ── Qdrant setup ──────────────────────────────────────────────────────────────
 client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 
+collection_exists = client.collection_exists(COLLECTION)
+
+if resume_index != -1 and not collection_exists:
+    # progress.json is stale (leftover from a different collection run).
+    # The target collection doesn't exist yet — treat this as a fresh run.
+    print(f"Collection '{COLLECTION}' not found despite checkpoint — resetting to fresh run.")
+    resume_index = -1
+
 if resume_index == -1:
-    # Fresh run: recreate collection with new 1024-dim schema
-    if client.collection_exists(COLLECTION):
+    # Fresh run: create (or recreate) the collection.
+    if collection_exists:
         print(f"Collection '{COLLECTION}' already exists — recreating...")
         client.delete_collection(COLLECTION)
     client.create_collection(
