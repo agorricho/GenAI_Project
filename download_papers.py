@@ -21,7 +21,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 TOPIC       = "ESG Performance impact on Firm Value"
-MAX_PAPERS  = 50
+MAX_PAPERS  = 51
 PAPERS_DIR  = "./papers"
 CHUNKS_FILE = "./chunks.json"
 

@@ -1,47 +1,12 @@
 [
   {
-    "question": "How does ESG disclosure quality affect a firm's cost of equity capital?",
-    "reference_answer": "Higher ESG disclosure quality is associated with a lower cost of equity capital. The study finds a statistically significant negative coefficient indicating that firms with more transparent ESG reporting face reduced financing costs.",
-    "expected_source_title": "ESG Disclosure and Cost of Capital: Evidence from Panel Data",
-    "generation_mode": "abstract",
-    "difficulty": "broad",
-    "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_001",
-    "source_chunk_index": 0
-  },
-  {
-    "question": "What specific F-statistic threshold does the paper use to validate instrument strength in its IV estimation?",
-    "reference_answer": "The paper applies the Stock and Yogo (2005) rule of thumb requiring a first-stage F-statistic greater than 10 to confirm that the instrumental variable is not weak.",
-    "expected_source_title": "Instrumental Variables and ESG Endogeneity in Firm Performance Research",
-    "generation_mode": "chunk",
-    "difficulty": "specific",
-    "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_002",
-    "source_chunk_index": 0
-  },
-  {
-    "question": "What is the optimal strategy for minimising carbon emissions in protein synthesis?",
-    "reference_answer": "This question is not related to ESG or firm performance research and is not covered by the corpus.",
-    "expected_source_title": "N/A",
-    "generation_mode": "negative",
-    "difficulty": "out-of-scope",
-    "esg_category": "off_topic",
-    "is_in_corpus": false,
-    "item_id": "item_003",
-    "source_chunk_index": 0
-  },
-  {
     "question": "How can automated NLP techniques applied to ESG news corpora improve the quality of ESG scores for responsible investing?",
     "reference_answer": "Quantitative techniques can be applied to improve ESG scores by leveraging annotated ESG corpora such as ESG-FTSE, which contains news articles with Environmental, Social and Governance relevance annotations. Both supervised and unsupervised learning experiments for ESG relevance detection demonstrate that the corpus can be used in different settings to derive accurate ESG predictions.",
     "expected_source_title": "ESG-FTSE: A corpus of news articles with ESG relevance labels and use cases",
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_004",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does few-shot fine-tuning improve the identification of sustainability intention in ESG fund prospectuses compared to zero-shot large language models?",
@@ -50,9 +15,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_005",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does greater import competition from China improve or harm the ESG performance of US firms?",
@@ -61,9 +24,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_006",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does trade policy uncertainty affect corporate ESG performance among Chinese listed companies?",
@@ -72,9 +33,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_007",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How has Ethereum's shift to Proof of Stake influenced the environmental performance trajectory of distributed ledger technologies?",
@@ -83,9 +42,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_008",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does the choice of multi-objective genetic algorithm affect performance and solution quality in software model refactoring?",
@@ -94,9 +51,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_009",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does an investor's risk preference parameter affect the acceptable risk and expected net present value of a firm project?",
@@ -105,9 +60,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_010",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does an instrumental variables approach using first-stage price regressions effectively detect firm collusion under a Bertrand-Nash oligopoly framework?",
@@ -116,9 +69,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_011",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How do emotion-specific sentiments in financial news headlines interact with firm-level ESG ratings to influence stock return behavior?",
@@ -127,9 +78,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_012",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does imposing an ESG-level constraint affect the out-of-sample Sharpe ratio of a regularized mean-variance portfolio in a large-dimensional setting?",
@@ -138,9 +87,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_013",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does ESG performance improve a firm's financial flexibility, and is this effect weaker for state-owned enterprises?",
@@ -149,9 +96,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_014",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How do entrepreneurial motivations affect ESG performance in Chinese automobile companies, and what mechanisms mediate this relationship?",
@@ -160,9 +105,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_015",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does an early fusion ensemble approach improve ESG impact type identification compared to individual transformer models?",
@@ -171,9 +114,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_016",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does digital innovation improve corporate ESG performance, and does generative AI technology adoption mediate this relationship?",
@@ -182,9 +123,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_017",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does software-to-hardware task migration affect system throughput performance in multiprocessor system-on-chip design?",
@@ -193,9 +132,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_018",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does incorporating ESG ratings as a linear transformation of financial returns affect portfolio optimization and dynamic asset pricing?",
@@ -204,9 +141,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_019",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does the scalability of genetic algorithms compare to list scheduling algorithms for multiprocessor job scheduling?",
@@ -215,9 +150,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_020",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Can Bayesian optimization effectively maximize stock portfolio performance while satisfying ESG criteria as soft constraints?",
@@ -226,9 +159,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_021",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Do large language models hold pro-ESG beliefs that influence the ESG-related judgments of human sell-side analysts?",
@@ -237,9 +168,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_022",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does ESG performance positively or negatively affect corporate financial performance in the global cruise industry?",
@@ -248,9 +177,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_023",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does identifying value-chain-specific indicators affect the scope and efficiency of corporate process improvement efforts?",
@@ -259,9 +186,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_024",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does firm non-expansiveness in weak metric spaces relate to the minimal displacement and linear rate of escape of mappings?",
@@ -270,9 +195,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_025",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does Chain-of-Thought prompting reduce hallucinations in large language models when analyzing long ESG reports?",
@@ -281,9 +204,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_026",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "Does fine-tuning XLM-RoBERTa with a custom strategy improve ESG impact duration classification across multiple languages?",
@@ -292,9 +213,7 @@
     "generation_mode": "abstract",
     "difficulty": "broad",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_027",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What specific form of greenwashing does the paper define as crosswashing, and how does it inflate ESG ratings?",
@@ -303,9 +222,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_028",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What causal estimation methods does the paper combine to identify the Average Treatment Effect of the EU ETS on GHG emissions and firm competitiveness in German manufacturing?",
@@ -314,9 +231,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_029",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What specific moderating role does ownership concentration play in the relationship between marketing investment and firm value?",
@@ -325,9 +240,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_030",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What key research gap does the paper identify regarding Digital Financial Services and firm performance in the academic literature?",
@@ -336,9 +249,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_031",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does ESG rating level affect the risk-adjusted performance of socially responsible mutual funds during periods of economic crisis versus expansion?",
@@ -347,9 +258,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_032",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "In which specific industry and during which phase of the EU ETS was a significant positive economic impact found on regulated German manufacturing firms?",
@@ -358,9 +267,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_033",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What two core properties does the proposed performance portability metric capture, and why are existing comparative claims considered subjective?",
@@ -369,9 +276,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_034",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What three primary ESG dimensions does AI analysis of corporate filings identify as key drivers of variation in ESG mentions?",
@@ -380,9 +285,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_035",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What specific financial metric do ESG scores strongly and positively signal in cross-sectional regressions of S&P 500 firms in the AI era?",
@@ -391,9 +294,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_036",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does proportional fairness compare to dominant resource fairness in efficiency-fairness tradeoff under stochastic job populations in cluster computing?",
@@ -402,9 +303,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_037",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What gold standard methodology does the paper use to benchmark machine ESG sentiment classification performance against human annotators?",
@@ -413,9 +312,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_038",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What percentage of the green ESG performance improvement from human-AI integration operates through green technology innovation, and what is the magnitude of the total effect?",
@@ -424,9 +321,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "environmental",
-    "is_in_corpus": true,
-    "item_id": "item_039",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What statistical method does the paper use to analyze tail dependence among firms within ESG rating classes, and what does it find about ESG risk during the 2008 financial crisis?",
@@ -435,9 +330,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_040",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What parameter-efficient adaptation strategies are used to produce ESG-specialized LLMs, and how do the adapted models compare to Llama-3 and Gemma-3 baselines?",
@@ -446,9 +339,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "general",
-    "is_in_corpus": true,
-    "item_id": "item_041",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What is the measured magnitude of the average abnormal return reduction following an ESG-risk social media spike event, and which ESG categories drive the effect?",
@@ -457,9 +348,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "social",
-    "is_in_corpus": true,
-    "item_id": "item_042",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What convergence pattern do firms exhibit in ESG reporting topics over time, and what strategic behavior drives this homogenization?",
@@ -468,9 +357,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_043",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How is the ESG rating component incorporated into the Bachelier-Black-Scholes-Merton model, and on what empirical dataset is it validated?",
@@ -479,9 +366,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_044",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What is the direction and mechanism of the ESG premium that arises in equilibrium when institutional investors operate under an ESG mandate alongside mean-variance investors?",
@@ -490,9 +375,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_045",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "What specific modules does the Pharos-ESG framework use to address chaotic reading order and implicit hierarchies in long ESG reports?",
@@ -501,9 +384,7 @@
     "generation_mode": "chunk",
     "difficulty": "specific",
     "esg_category": "governance",
-    "is_in_corpus": true,
-    "item_id": "item_046",
-    "source_chunk_index": 0
+    "is_in_corpus": "TRUE"
   },
   {
     "question": "How does central bank interest rate policy affect mortgage default rates in the residential housing market?",
@@ -512,9 +393,7 @@
     "generation_mode": "negative",
     "difficulty": "out-of-scope",
     "esg_category": "off_topic",
-    "is_in_corpus": false,
-    "item_id": "item_047",
-    "source_chunk_index": 0
+    "is_in_corpus": "FALSE"
   },
   {
     "question": "What is the effect of nitrogen fertilizer application rates on crop yield in temperate agricultural zones?",
@@ -523,9 +402,7 @@
     "generation_mode": "negative",
     "difficulty": "out-of-scope",
     "esg_category": "off_topic",
-    "is_in_corpus": false,
-    "item_id": "item_048",
-    "source_chunk_index": 0
+    "is_in_corpus": "FALSE"
   },
   {
     "question": "How does social media advertising spend affect brand recall in consumer packaged goods markets?",
@@ -534,9 +411,7 @@
     "generation_mode": "negative",
     "difficulty": "out-of-scope",
     "esg_category": "off_topic",
-    "is_in_corpus": false,
-    "item_id": "item_049",
-    "source_chunk_index": 0
+    "is_in_corpus": "FALSE"
   },
   {
     "question": "What is the causal effect of minimum wage legislation on employment levels in the fast-food industry?",
@@ -545,8 +420,6 @@
     "generation_mode": "negative",
     "difficulty": "out-of-scope",
     "esg_category": "off_topic",
-    "is_in_corpus": false,
-    "item_id": "item_050",
-    "source_chunk_index": 0
+    "is_in_corpus": "FALSE"
   }
 ]
