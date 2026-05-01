@@ -1,3 +1,4 @@
+from run_evaluation import run_evaluation
 import os
 import json
 from pathlib import Path
@@ -142,12 +143,13 @@ with col3:
     st.metric("Current Topic", topic)
 
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "Overview",
     "Paper Search",
     "Research Framework",
     "Qdrant",
     "Chat",
+    "Evaluation",
 ])
 
 with tab1:
@@ -293,3 +295,21 @@ with tab5:
                         title   = c.get("title", "")
                         st.markdown(f"- {authors} ({year}). *{title}*")
             st.session_state.messages.append(AIMessage(answer))
+
+with tab6:
+    st.subheader("Evaluation Runner")
+
+    if st.button("Run Full Evaluation", type="primary"):
+        with st.spinner("Running evaluation on dataset..."):
+            results_df, accuracy = run_evaluation()
+
+        st.success(f"Evaluation complete! Accuracy: {accuracy:.2%}")
+
+        st.dataframe(results_df, use_container_width=True)
+
+        st.download_button(
+            "Download Results CSV",
+            data=results_df.to_csv(index=False).encode("utf-8"),
+            file_name="evaluation_results.csv",
+            mime="text/csv",
+        )
